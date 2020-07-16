@@ -1,0 +1,29 @@
+package com.silencer.entity;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import com.silencer.entity.Users;
+
+public class SilencerTest {
+
+	public static void main(String[] args) {
+		
+		 Silencer silencer = new Silencer();
+		
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("SilencerStoreProject");
+		EntityManager entityManager=entityManagerFactory.createEntityManager();
+		
+		entityManager.getTransaction().begin();
+		entityManager.persist(user1);
+		
+		entityManager.getTransaction().commit();
+		
+		entityManager.close();
+		entityManagerFactory.close();
+		
+		System.out.println("A user persisted");
+
+	}
+
+}
