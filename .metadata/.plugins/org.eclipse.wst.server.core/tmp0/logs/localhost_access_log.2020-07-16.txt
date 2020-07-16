@@ -1,0 +1,5 @@
+127.0.0.1 - - [16/Jul/2020:09:47:38 +0200] "GET / HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [16/Jul/2020:09:49:36 +0200] "GET /SilencerStoreProject/index.jsp HTTP/1.1" 200 160
+0:0:0:0:0:0:0:1 - - [16/Jul/2020:09:50:38 +0200] "GET /SilencerStoreProject HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [16/Jul/2020:09:50:38 +0200] "GET /SilencerStoreProject/ HTTP/1.1" 200 160
+0:0:0:0:0:0:0:1 - - [16/Jul/2020:09:50:39 +0200] "GET /favicon.ico HTTP/1.1" 404 720
