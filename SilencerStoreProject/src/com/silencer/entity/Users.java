@@ -3,6 +3,8 @@ package com.silencer.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,6 +13,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "users", catalog = "freydevikdb")
+
 public class Users implements java.io.Serializable {
 
 	private int userId;
@@ -27,9 +30,16 @@ public class Users implements java.io.Serializable {
 		this.fullName = fullName;
 		this.password = password;
 	}
+	public Users( String email, String fullName, String password) {
+		
+		this.email = email;
+		this.fullName = fullName;
+		this.password = password;
+	}
+
 
 	@Id
-
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "user_id", unique = true, nullable = false)
 	public int getUserId() {
 		return this.userId;

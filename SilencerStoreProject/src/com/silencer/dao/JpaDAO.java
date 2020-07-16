@@ -52,26 +52,16 @@ public class JpaDAO<E> {
 		entityManager.remove(refrence);
 		entityManager.getTransaction().commit();
 	
-		
-		
+
 	}
 	
 	public List<E> findWithNamedQuery(String queryName){
 		Query query= entityManager.createNamedQuery(queryName);
 		return query.getResultList();
-		
-		
+
 		
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-
 }
 
 
