@@ -47,19 +47,24 @@ public class JpaDAO<E> {
 	}
 	
 	public void delete(Class<E> type, Object id) {
+		
 		entityManager.getTransaction().begin();
 		E refrence= entityManager.getReference(type, id);
 		entityManager.remove(refrence);
 		entityManager.getTransaction().commit();
-	
-
+		
 	}
 	
 	public List<E> findWithNamedQuery(String queryName){
+		
 		Query query= entityManager.createNamedQuery(queryName);
 		return query.getResultList();
 
-		
+	}
+	
+	public long countWithNamedQuery(String queryName) {
+		Query query = entityManager.createNamedQuery(queryName);
+		return (long) query.getSingleResult();
 	}
 	
 }

@@ -72,7 +72,7 @@ public class UserDAOTest {
 	
 	@Test
 	public void testGetUsersFound() {
-		Integer userId=4;
+		Integer userId=1;
 		Users user=userDao.get(userId);
 		System.out.println(user.getEmail());
 		assertNotNull(user);
@@ -88,7 +88,7 @@ public class UserDAOTest {
 	
 	@Test
 	public void testDeleteUser() {
-		Integer userId=4;
+		Integer userId=1;
 		userDao.delete(userId);
 		
 		Users user=userDao.get(userId);
@@ -108,9 +108,16 @@ public class UserDAOTest {
 		List<Users> listUsers= userDao.listAll();
 		
 		for(Users user:listUsers) {
-			System.out.println(user);
+			System.out.println(user.getEmail());
 		}
 		assert(listUsers.size()>0);
+	}
+	
+	@Test
+	public void testCountAll() {
+		long countAll= userDao.count();
+		System.out.println(countAll);
+		assertEquals(2, countAll);
 	}
 	
 	@AfterClass
