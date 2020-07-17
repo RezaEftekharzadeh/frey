@@ -1,3 +1,7 @@
 INDEX VERSION 1.131
+C:\SilencerStoreProject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\921229462.index
+\SilencerStoreProject\src
 C:\SilencerStoreProject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2325214454.index
+\SilencerStoreProject\src
+C:\SilencerStoreProject\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3503667349.index
 \SilencerStoreProject\src
