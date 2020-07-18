@@ -6,7 +6,7 @@
   	
   	<br><br>
   	
-  	<div>
+  	<div align="center">
   		<input type="text" name="keyword" size="55" />
   		<input type="button" value="Search" />
   		

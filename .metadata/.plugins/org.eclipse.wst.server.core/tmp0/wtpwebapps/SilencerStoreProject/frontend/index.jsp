@@ -11,14 +11,14 @@
 	
 		<div align="center">
 	 		<h1>Welcome to index page</h1>
-		</div>
 		
-		<div align="center">
-	 		<img  src="images/header.jpg" />
-	  	</div>
-	  	
-	 
-	
+		<p>
+			We specialize the design of user friendly and lightweight suppressors with high 
+		    suppression rate that retain the balance of the hunting rifle. 
+
+	 	 </p>
+	  </div>
+	<a href="frontend/norsk.jsp">Norsk</a>
 	
 		<jsp:directive.include file="footer.jsp" />
 	</body>

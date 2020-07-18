@@ -12,7 +12,7 @@
 	<jsp:include page="header.jsp" />
 	<div align="center">
 	     <h1>List User Dashboard</h1>
-	     <h3><a href="create">Create New User</a></h3>
+	     <h3><a href="user_create.jsp">Create New User</a></h3>
     </div>
     
 	<div align="center">
@@ -21,9 +21,7 @@
 				<th>index</th>
 				<th>Email</th>
 				<th>Full Name</th>
-				<th>Actions
-					
-				</th>
+				<th>Actions</th>
 			</tr>
 			<c:forEach var="user" items="${listUser}" varStatus="status">
 				<tr>
@@ -34,15 +32,13 @@
 						<a href="">Edith</a>
 						<a href="">Delete</a>
 					</td>
-				
-				
 				</tr>
-			
 			</c:forEach>
 		
 		</table>
-	
+		
 	</div>
+	
 	
      <jsp:include page="footer.jsp" />
 </body>
