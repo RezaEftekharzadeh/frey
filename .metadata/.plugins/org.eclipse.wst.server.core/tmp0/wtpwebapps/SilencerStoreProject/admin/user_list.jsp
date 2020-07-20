@@ -15,6 +15,12 @@
 	     <h3><a href="user_create.jsp">Create New User</a></h3>
     </div>
     
+    <c:if test="${ message !=null }">
+	    <div align="center">
+	    	<h4><i><p style="color:green;">${message}</p></i></h4>
+	    </div>
+    </c:if>
+    
 	<div align="center">
 		<table border="1" cellPadding="5">
 			<tr>
@@ -29,7 +35,7 @@
 					<td>${user.email}</td>
 					<td>${user.fullName}</td>
 					<td>
-						<a href="">Edith</a>
+						<a href="edit_user?id=${user.userId}">Edit</a>
 						<a href="">Delete</a>
 					</td>
 				</tr>

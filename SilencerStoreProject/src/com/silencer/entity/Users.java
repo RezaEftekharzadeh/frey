@@ -17,6 +17,7 @@ import javax.persistence.Table;
 @Table(name = "users", catalog = "freydevikdb")
 @NamedQueries({
 	@NamedQuery(name= "Users.findAll", query= "SELECT u FROM Users u ORDER BY u.fullName"),
+	@NamedQuery(name= "Users.findByEmail", query= "SELECT u FROM Users u WHERE u.email = :email"),
 	@NamedQuery(name= "Users.countAll", query= "SELECT COUNT(*) FROM Users u" )
 })
 
@@ -36,6 +37,7 @@ public class Users implements java.io.Serializable {
 		this.fullName = fullName;
 		this.password = password;
 	}
+	
 	public Users( String email, String fullName, String password) {
 		
 		this.email = email;
