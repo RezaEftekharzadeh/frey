@@ -65,7 +65,7 @@
 		</table>
 		
 	</div>
-	<div align="center">
+	<div align="">
 		<a href="javascript:fnExcelReport()">Download this table</a>
 	</div>
 
