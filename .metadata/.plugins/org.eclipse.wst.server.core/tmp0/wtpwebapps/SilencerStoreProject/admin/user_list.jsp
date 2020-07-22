@@ -15,16 +15,36 @@
 	     <h3><a href="user_create.jsp">Create New User</a></h3>
     </div>
     
-    <c:if test="${ message !=null }">
-	    <div align="center">
-	    	<h4><i><p style="color:green;">${message}</p></i></h4>
-	    </div>
+    
+   <c:if test="${ message != null }">
+    	<c:if test="${ message2 == 1 }">
+    	
+		    <div align="center">
+		    	<h4><i><p style="color:green;">${message}</p></i></h4>
+		    	
+		    </div>
+   		
+   		</c:if>
     </c:if>
+  
+     <c:if test="${ message != null }">
+    	<c:if test="${ message2 == 2 }">
+    	
+		    <div align="center">
+		    	<h4><i><p style="color:red;">${message}</p></i></h4>
+		    	
+		    </div>
+   		
+   		</c:if>
+    </c:if>
+   
+ 
     
 	<div align="center">
 		<table border="1" cellPadding="5">
 			<tr>
 				<th>index</th>
+				<th>ID</th>
 				<th>Email</th>
 				<th>Full Name</th>
 				<th>Actions</th>
@@ -32,11 +52,12 @@
 			<c:forEach var="user" items="${listUser}" varStatus="status">
 				<tr>
 					<td>${status.index+1}</td>
+					<td>${user.userId}</td>
 					<td>${user.email}</td>
 					<td>${user.fullName}</td>
 					<td>
 						<a href="edit_user?id=${user.userId}">Edit</a>
-						<a href="">Delete</a>
+						<a href="javascript:confirmDelete(${user.userId})">Delete</a>
 					</td>
 				</tr>
 			</c:forEach>
@@ -45,7 +66,20 @@
 		
 	</div>
 	
+
 	
      <jsp:include page="footer.jsp" />
+     
+     <script>
+		function confirmDelete(userId){
+		
+			if(confirm('Are you sure that want to delete ' + userId + '?')){
+				
+				window.location= 'delete_user?id='+ userId ;
+			}
+		
+		}
+	
+	</script>
 </body>
 </html>

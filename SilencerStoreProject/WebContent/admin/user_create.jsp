@@ -25,24 +25,25 @@
     
     	<h3><p style="color:red;">${messageFailed}</p></h3>
     	
-    	
     </div>
     
     <div align="center">
-    <c:if test = "${user != null}">
     
-	     	<form action="update_user" method="post">
-	     	<input type="hidden" name = "userId" value= ${user.userId } >
-	    </c:if>
+	    <c:if test = "${user != null}">
 	    
-	    <c:if test = "${user.userId == null}">
-	    
-	     	<form action="create_user" method="post">
-	     	
-	    </c:if>
+		     	<form action="update_user" method="post">
+		     	<input type="hidden" name = "userId" value= ${user.userId } >
+		     	
+		</c:if>
+		    
+		<c:if test = "${user.userId == null}">
+		    
+		     	<form action="create_user" method="post">
+		     	
+		</c:if>
     	
     	
-    		<table>
+    	<table>
     		
     			<tr>
     				<td>Email:</td>
@@ -60,7 +61,7 @@
     				<td><input type="submit" value="save"></td>
     			</tr>
     		
-    		</table>
+    	 </table>
     	
     	</form>
     		

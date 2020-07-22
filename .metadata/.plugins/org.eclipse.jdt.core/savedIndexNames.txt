@@ -4,7 +4,6 @@ INDEX VERSION 1.131+C:\SilencerStoreProject\.metadata\.plugins\org.eclipse.jdt.c
 2455846807.index
 49505514.index
 2493056416.index
-4239598934.index
 3450831843.index
 711050520.index
 1269319753.index

@@ -15,6 +15,7 @@ import com.silencer.dao.UserDAO;
 import com.silencer.entity.Users;
 
 public class UserServices {
+	private static int failOrOk;
 	private EntityManagerFactory entityManagerFactory;
 	private EntityManager entityManager;
 	private UserDAO userDAO;
@@ -23,6 +24,7 @@ public class UserServices {
 	
 	
 	public UserServices(HttpServletRequest request, HttpServletResponse response) {
+		
 		this.request=request;
 		this.response=response;
 		entityManagerFactory = Persistence.createEntityManagerFactory("SilencerStoreProject");
@@ -32,17 +34,22 @@ public class UserServices {
 	}
 
 	public void listUser() throws ServletException, IOException {
-		listUser(null);
+		listUser(null,0);
 		
 	}
-	public void listUser(String message) throws ServletException, IOException {
+	//int failOrOK send message to user_list with different format
+	public void listUser(String message, int failOrOk) throws ServletException, IOException {
+		
+		
 		
 		List<Users> listUsers = userDAO.listAll();
 		
 		request.setAttribute("listUser", listUsers);
 		
 		if(message != null) {
-		request.setAttribute("message", message);
+			request.setAttribute("message", message);
+			request.setAttribute("message2", failOrOk);
+			
 		}
 		
 		String listPage = "user_list.jsp";
@@ -64,6 +71,7 @@ public class UserServices {
 		if( existUser != null) {
 			
 			String message = "***User with email '"+ email + "' already exist***" ;
+			failOrOk=2;
 			
 			request.setAttribute("messageFailed", message);
 			RequestDispatcher dispatcher = request.getRequestDispatcher("user_create.jsp");
@@ -73,7 +81,8 @@ public class UserServices {
 			
 			Users users= new Users(email, fullName, password);
 			userDAO.create(users);
-			listUser("**User created successfully**");
+			listUser("**User created successfully**",1);
+			
 			
 			 }
 		
@@ -82,28 +91,62 @@ public class UserServices {
 	public void editUser() throws ServletException, IOException {
 		
 		int userID= Integer.parseInt(request.getParameter("id"));
+		
 		Users user= userDAO.get(userID);
 		
-		request.setAttribute("user", user);
-		RequestDispatcher dispatcher= request.getRequestDispatcher("user_create.jsp");
-		dispatcher.forward(request, response);
+		if (user != null) {
+			
+			request.setAttribute("user", user);
+			RequestDispatcher dispatcher= request.getRequestDispatcher("user_create.jsp");
+			dispatcher.forward(request, response);
+			
+			
+			  }else { listUser("***User with Id '"+ userID +"' does not exist***", 2); }
+			 
+		
+		
 	}
+	
 
-	public void updateUser() {
+	public void updateUser() throws ServletException, IOException {
 		
 		String email= request.getParameter("email");
 		String fullName= request.getParameter("fullName");
 		String password = request.getParameter("password");
 		int userId = Integer.parseInt(request.getParameter("userId"));
 		
-		Users user = new Users(userId, email, fullName, password);
-		userDAO.update(user);
+		Users userByEmail = userDAO.findByEmail(email);
 		
+		
+
+		
+		  if (userByEmail != null && userId != userByEmail.getUserId()) {
+		
+			  listUser("***Can't update, User with email '"+ email +"' already exist***", 2);
+			 
+		  
+		  }else{
+		  
+			  Users user = new Users(userId, email, fullName, password);
+			  userDAO.update(user);
+			  
+			  listUser("**User updated successfully**",1);
+			 
+		  
+		  }
+
+	}
+
+	public void deleteUser() throws ServletException, IOException {
+		int userId = Integer.parseInt(request.getParameter("id"));
+		userDAO.delete(userId);
+		listUser("**User deleted**",1);
 		
 		
 	}
 
 }
+
 
 
 
