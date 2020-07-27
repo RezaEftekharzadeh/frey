@@ -4,8 +4,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Create User</title>
+	<meta charset="ISO-8859-1">
+	<title>Create User</title>
+	
+	<script 
+			src="https://code.jquery.com/jquery-3.3.1.min.js" 
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" 
+			crossorigin="anonymous">
+	</script>
+	
+	<script 
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" 
+			integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" 
+			crossorigin="anonymous">
+	</script>
+	
 </head>
 <body>
 <jsp:include page="header.jsp" />
@@ -31,34 +44,37 @@
     
 	    <c:if test = "${user != null}">
 	    
-		     	<form action="update_user" method="post">
+		     	<form action="update_user" method="post" id="userForm">
 		     	<input type="hidden" name = "userId" value= ${user.userId } >
 		     	
 		</c:if>
 		    
 		<c:if test = "${user.userId == null}">
 		    
-		     	<form action="create_user" method="post">
+		     	<form action="create_user" method="post" id="userForm">
 		     	
 		</c:if>
     	
     	
-    	<table>
+    	<table >
     		
     			<tr>
     				<td>Email:</td>
-    				<td><input type="text" name="email" size="20" value= ${user.email }>
+    				<td><input type="text" name="email" id="email" size="20" value= ${user.email }>
     			</tr>
     			<tr>
     				<td>Full Name:</td>
-    				<td><input type="text" name="fullName" size="20"  value= ${user.fullName }>
+    				<td><input type="text" name="fullName" id="fullName" size="20"  value= ${user.fullName }>
     			</tr>
     			<tr>
     				<td>Password:</td>
-    				<td><input type="password" name="password" size="20"  value= ${user.password }>
+    				<td><input type="password" name="password" id="password" size="20"  value= ${user.password }>
     			</tr>
     			<tr>
-    				<td><input type="submit" value="save"></td>
+    				<td align="center">
+    					<button type="submit" >Save</button>&nbsp;&nbsp;&nbsp;&nbsp;
+    					<button onclick="javascript:history.go(-1);" >Cancel</button>
+    				</td>
     			</tr>
     		
     	 </table>
@@ -66,6 +82,37 @@
     	</form>
     		
     </div>
+    
+<script type="text/javascript">
+
+    $(document).ready(function() {
+		$("#userForm").validate({
+			rules: {
+				email: {
+					required: true,
+					email: true
+				},
+				
+				fullName: "required",
+			    password: "required",
+			    
+			},
+			
+			messages: {
+				
+				email: {
+					required: "Please enter email",
+					email: "Please enter valid email"
+				},
+				
+				fullName: "Please enter Full Name",
+				password: "Please enter password"
+			}
+		});
+		
+		
+	});
+</script>
 
      <jsp:include page="footer.jsp" />
 </body>

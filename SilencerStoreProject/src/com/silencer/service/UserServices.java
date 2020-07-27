@@ -101,10 +101,9 @@ public class UserServices {
 			dispatcher.forward(request, response);
 			
 			
-			  }else { listUser("***User with Id '"+ userID +"' does not exist***", 2); }
-			 
-		
-		
+			  }else { 
+				  listUser("***User with Id '"+ userID +"' does not exist***", 2); }
+	
 	}
 	
 
