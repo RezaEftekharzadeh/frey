@@ -1,0 +1,35 @@
+package com.silencer.dao;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+
+public class SilencerDAOTest {
+	private static EntityManagerFactory entityManagerFactory;
+	private static EntityManager entityManager;
+	private static UserDAO userDao;
+	
+	@BeforeClass
+	public static void setup() {
+		
+		 entityManagerFactory = Persistence.createEntityManagerFactory("SilencerStoreProject");
+		 entityManager=entityManagerFactory.createEntityManager();
+		
+		 userDao=new UserDAO(entityManager);
+	}
+	
+	
+	
+	
+	
+	
+	@AfterClass
+	public static void tearDown() {
+		entityManager.close();
+		entityManagerFactory.close();
+	}
+
+}

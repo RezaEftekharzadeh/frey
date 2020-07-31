@@ -1,0 +1,58 @@
+package com.silencer.dao;
+
+import static org.junit.Assert.*;
+
+import java.io.IOException;
+import java.net.URI;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import com.silencer.entity.Silencer;
+
+public class SilencerDAOTest {
+	private static EntityManagerFactory entityManagerFactory;
+	private static EntityManager entityManager;
+	private static SilencerDAO silencerDao;
+	
+
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+		 entityManagerFactory = Persistence.createEntityManagerFactory("SilencerStoreProject");
+		 entityManager=entityManagerFactory.createEntityManager();
+		
+		 silencerDao=new SilencerDAO(entityManager);
+	}
+
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+		entityManager.close();
+		entityManagerFactory.close();
+	}
+
+	@Test
+	public void testCreateSilencer() throws IOException {
+		Silencer silencer = new Silencer();
+		silencer.setCoreSize("18x1");
+		silencer.setPrice(120);
+		silencer.setThreadSize("featherlight 196");
+		silencer.setDescription("very light ");
+		
+		String imagePath= "C:\\Users\\erice\\OneDrive\\Pictures\\Screenshots\\1.png" ;
+		byte[] image= Files.readAllBytes(Paths.get(imagePath));
+		
+		silencer.setImage(image);
+		
+		
+	
+		silencerDao.create(silencer);
+	}
+
+}

@@ -34,7 +34,7 @@ public class OrderDetail implements java.io.Serializable {
 	@EmbeddedId
 
 	@AttributeOverrides({ @AttributeOverride(name = "orderId", column = @Column(name = "order_id", nullable = false)),
-			@AttributeOverride(name = "bookId", column = @Column(name = "book_id", nullable = false)),
+			@AttributeOverride(name = "silencerId", column = @Column(name = "silencer_id", nullable = false)),
 			@AttributeOverride(name = "quantity", column = @Column(name = "quantity")),
 			@AttributeOverride(name = "subtotal", column = @Column(name = "subtotal", precision = 12, scale = 0)) })
 	public OrderDetailId getId() {
@@ -46,7 +46,7 @@ public class OrderDetail implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "book_id", nullable = false, insertable = false, updatable = false)
+	@JoinColumn(name = "silencer_id", nullable = false, insertable = false, updatable = false)
 	public Silencer getSilencer() {
 		return this.silencer;
 	}

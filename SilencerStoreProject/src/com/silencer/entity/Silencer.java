@@ -9,6 +9,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -17,6 +19,11 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "silencer", catalog = "freydevikdb")
+@NamedQueries({
+	@NamedQuery(name="silencer.findAll", query="SELECT s FROM Silencer s"),
+	@NamedQuery(name="silencer.findByThreadSize" , query="SELECT s FROM Silencer s WHERE s.threadSize = :threadSize"),
+	@NamedQuery(name="silencer.findByCoreSize" , query="SELECT s FROM Silencer s WHERE s.coreSize = :coreSize")
+})
 public class Silencer implements java.io.Serializable {
 
 	private int silencerId;

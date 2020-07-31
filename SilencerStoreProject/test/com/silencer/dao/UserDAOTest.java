@@ -64,7 +64,7 @@ public class UserDAOTest {
 		user.setEmail("Reza@gmail.com");
 		user.setFullName("eric.eft");
 		user.setPassword("12345");
-		user.setUserId(6);
+		user.setUserId(66);
 		
 		user= userDao.update(user);
 	}

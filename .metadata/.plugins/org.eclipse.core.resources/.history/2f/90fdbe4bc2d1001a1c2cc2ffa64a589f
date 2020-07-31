@@ -1,0 +1,69 @@
+package com.silencer.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import com.silencer.entity.Silencer;
+import com.silencer.entity.Users;
+
+
+public class SilencerDAO extends JpaDAO<Silencer> implements GenericDAO<Silencer> {
+
+	public SilencerDAO(EntityManager entityManager) {
+		super(entityManager);
+		
+	}
+	
+	@Override
+	public Silencer create(Silencer silencer) {
+		return super.create(silencer);
+	}
+	
+	@Override
+	public Silencer update(Silencer silencer) {
+		return super.update(silencer);
+	}
+
+	@Override
+	public Silencer get(Object silencerId) {
+		
+		return super.find(Silencer.class, silencerId);
+	}
+
+	@Override
+	public void delete(Object silencerId) {
+		super.delete(Silencer.class, silencerId);
+		
+		
+	}
+
+	@Override
+	public List<Silencer> listAll() {
+		
+		return super.findWithNamedQuery("silencer.findAll");
+	}
+	
+
+	public Silencer findByThreadSize(String threadSize) {
+		
+		List<Silencer> listSilencer= super.findWithNamedQuery("silencer.findByThreadSize", "thread_size", threadSize);
+		
+		if(listSilencer !=null && listSilencer.size() > 0) { 
+			for(int i=0; i<listSilencer.size(); i++) {
+				return listSilencer.get(i);
+		}
+			
+		}
+			
+		return null;
+		}
+		
+
+	@Override
+	public long count() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}
