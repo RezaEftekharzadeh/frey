@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.js"></script>
+	<title>Insert title here</title>
+</head>
+<body>
+
+	<div class ="container">
+		
+		<div class="card mb-3"> 
+			<div class="card-body">
+				<span class="float-right" style="cursor:pointer">
+					x
+				</span>
+				
+				<h4 class="card-title"></h4>
+				
+				<div class="employee-form">
+				
+					<select name="tread" id="tread" >
+						<option value="volvo">Volvo</option>
+					</select>
+				
+				</div>
+			</div>
+		</div>
+
+		<button class="btn btn-success mt-5 mb-5">
+			New Form
+		</button>
+		
+	</div>
+
+</body>
+</html>

@@ -66,8 +66,8 @@ public class SilencerDAO extends JpaDAO<Silencer> implements GenericDAO<Silencer
 
 	@Override
 	public long count() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return super.countWithNamedQuery("silencer.countAll");
 	}
 
 }

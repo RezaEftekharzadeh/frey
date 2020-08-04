@@ -22,7 +22,8 @@ import javax.persistence.Table;
 @NamedQueries({
 	@NamedQuery(name="silencer.findAll", query="SELECT s FROM Silencer s"),
 	@NamedQuery(name="silencer.findByThreadSize" , query="SELECT s FROM Silencer s WHERE s.threadSize = :threadSize"),
-	@NamedQuery(name="silencer.findByCoreSize" , query="SELECT s FROM Silencer s WHERE s.coreSize = :coreSize")
+	@NamedQuery(name="silencer.findByCoreSize" , query="SELECT s FROM Silencer s WHERE s.coreSize = :coreSize"),
+	@NamedQuery(name="silencer.countAll", query="SELECT COUNT(*) FROM Silencer s")
 })
 public class Silencer implements java.io.Serializable {
 

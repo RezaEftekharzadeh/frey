@@ -112,13 +112,17 @@ public class SilencerDAOTest {
 				
 				  Silencer silencer =listSilencer.get(i);
 				  System.out.println(silencer.getThreadSize());
-				 
-				 
 				
+			}
 		}
-	}
 	
 
+	}
+	@Test
+	public void testCountAllSilencer() {
+		long count = silencerDao.count();
+		
+		assertEquals(5, count);
 	}
 }
 
