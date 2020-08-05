@@ -5,10 +5,11 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import com.silencer.entity.Silencer;
+import com.silencer.entity.SilencerSize;
 import com.silencer.entity.Users;
 
 
-public class SilencerDAO extends JpaDAO<Silencer> implements GenericDAO<Silencer> {
+public class SilencerDAO extends JpaDAO<SilencerSize> implements GenericDAO<SilencerSize> {
 
 	public SilencerDAO(EntityManager entityManager) {
 		super(entityManager);
@@ -16,51 +17,55 @@ public class SilencerDAO extends JpaDAO<Silencer> implements GenericDAO<Silencer
 	}
 	
 	@Override
-	public Silencer create(Silencer silencer) {
+	public SilencerSize create(SilencerSize silencer) {
 		return super.create(silencer);
 	}
 	
 	@Override
-	public Silencer update(Silencer silencer) {
+	public SilencerSize update(SilencerSize silencer) {
 		return super.update(silencer);
 	}
 
 	@Override
-	public Silencer get(Object silencerId) {
+	public SilencerSize get(Object silencerId) {
+		return null;
 		
-		return super.find(Silencer.class, silencerId);
+		//return super.find(Silencer.class, silencerId);
 	}
 
 	@Override
 	public void delete(Object silencerId) {
-		super.delete(Silencer.class, silencerId);
+		//super.delete(Silencer.class, silencerId);
 		
 		
 	}
 
 	@Override
-	public List<Silencer> listAll() {
+	public List<SilencerSize> listAll() {
 		
-		return super.findWithNamedQuery("silencer.findAll");
+		//return super.findWithNamedQuery("silencer.findAll");
+		return null;
 	}
 	
 
 	public Silencer findByThreadSize(String threadSize) {
-		
-		List<Silencer> listSilencer= super.findWithNamedQuery("silencer.findByThreadSize", "threadSize", threadSize);
-		
-		if(!listSilencer.isEmpty()) { 
-			for(int i=0; i<listSilencer.size(); i++) {
-				
-				  System.out.println(listSilencer.get(i));
-				 // return listSilencer.get(i);
-				 
-				return listSilencer.get(1);
-		}
-			
-		}
-			
 		return null;
+		
+		/*
+		 * List<Silencer> listSilencer=
+		 * super.findWithNamedQuery("silencer.findByThreadSize", "threadSize",
+		 * threadSize);
+		 * 
+		 * if(!listSilencer.isEmpty()) { for(int i=0; i<listSilencer.size(); i++) {
+		 * 
+		 * System.out.println(listSilencer.get(i)); // return listSilencer.get(i);
+		 * 
+		 * return listSilencer.get(1); }
+		 * 
+		 * }
+		 * 
+		 * return null;
+		 */
 		}
 		
 
