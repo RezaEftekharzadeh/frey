@@ -5,11 +5,11 @@ import java.util.List;
 import javax.persistence.EntityManager;
 
 import com.silencer.entity.Silencer;
-import com.silencer.entity.SilencerSize;
+import com.silencer.entity.SilencerTreadSize;
 import com.silencer.entity.Users;
 
 
-public class SilencerDAO extends JpaDAO<SilencerSize> implements GenericDAO<SilencerSize> {
+public class SilencerDAO extends JpaDAO<Silencer> implements GenericDAO<Silencer> {
 
 	public SilencerDAO(EntityManager entityManager) {
 		super(entityManager);
@@ -17,55 +17,55 @@ public class SilencerDAO extends JpaDAO<SilencerSize> implements GenericDAO<Sile
 	}
 	
 	@Override
-	public SilencerSize create(SilencerSize silencer) {
+	public Silencer create(Silencer silencer) {
 		return super.create(silencer);
 	}
 	
 	@Override
-	public SilencerSize update(SilencerSize silencer) {
+	public Silencer update(Silencer silencer) {
 		return super.update(silencer);
 	}
 
 	@Override
-	public SilencerSize get(Object silencerId) {
-		return null;
+	public Silencer get(Object silencerId) {
 		
-		//return super.find(Silencer.class, silencerId);
+		
+		return super.find(Silencer.class, silencerId);
 	}
 
 	@Override
 	public void delete(Object silencerId) {
-		//super.delete(Silencer.class, silencerId);
+		super.delete(Silencer.class, silencerId);
 		
 		
 	}
 
 	@Override
-	public List<SilencerSize> listAll() {
+	public List<Silencer> listAll() {
 		
-		//return super.findWithNamedQuery("silencer.findAll");
-		return null;
+		return super.findWithNamedQuery("silencer.findAll");
+		
 	}
 	
 
 	public Silencer findByThreadSize(String threadSize) {
-		return null;
 		
-		/*
-		 * List<Silencer> listSilencer=
-		 * super.findWithNamedQuery("silencer.findByThreadSize", "threadSize",
-		 * threadSize);
-		 * 
-		 * if(!listSilencer.isEmpty()) { for(int i=0; i<listSilencer.size(); i++) {
-		 * 
-		 * System.out.println(listSilencer.get(i)); // return listSilencer.get(i);
-		 * 
-		 * return listSilencer.get(1); }
-		 * 
-		 * }
-		 * 
-		 * return null;
-		 */
+		
+		
+		  List<Silencer> listSilencer=
+		  super.findWithNamedQuery("silencer.findByThreadSize", "threadSize",
+		  threadSize);
+		  
+		  if(!listSilencer.isEmpty()) { for(int i=0; i<listSilencer.size(); i++) {
+		  
+		  System.out.println(listSilencer.get(i)); // return listSilencer.get(i);
+		  
+		  return listSilencer.get(1); }
+		  
+		  }
+		  
+		  return null;
+		 
 		}
 		
 

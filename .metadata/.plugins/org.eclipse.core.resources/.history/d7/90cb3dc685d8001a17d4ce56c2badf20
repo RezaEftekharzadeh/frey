@@ -1,0 +1,46 @@
+package com.silencer.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import com.silencer.entity.SilencerSize;
+
+public class SilencerSizeDAO extends JpaDAO<SilencerSize> implements GenericDAO<SilencerSize> {
+
+	public SilencerSizeDAO(EntityManager entityManager) {
+		super(entityManager);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public SilencerSize get(Object id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
+	public SilencerSize create(SilencerSize silencerSize) {
+		
+		return super.create(silencerSize);
+	}
+
+	@Override
+	public void delete(Object id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<SilencerSize> listAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public long count() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

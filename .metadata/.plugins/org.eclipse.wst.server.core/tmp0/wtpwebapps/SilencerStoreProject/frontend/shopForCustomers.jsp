@@ -12,9 +12,9 @@
 </head>
 <body>
 
-<!--  <form action="/frontend/shop" method="post"> -->
+
   <div class="container">
-		
+<form action="shop_customer" method="post">		
 		
 		<div class="card mb-3"  v-for="(silencer, index) in silencers"> 
 			<div class="card-body" >
@@ -44,11 +44,14 @@
 					</select>
 					
 					<input type="text" placeholder="total" size = "3" v-model="silencer.total">
+					
+					<input type="text" value=${index} name="index">
 
 				</div>
 			</div>
 		</div>
-		
+		<input type="submit" value="finish" >
+</form>
 		<button class="btn btn-success mt-5 mb-5" 
 			@click="addNewForm">
 			New Form
@@ -56,8 +59,7 @@
 		 
 		
 	</div>
-<!-- <input type="submit" value="finish" > -->
-</form>
+
 	
 	<script>
 	
@@ -86,7 +88,7 @@
 			this.silencers.splice(index, 1)
 			}	
 		}
-	})
+	}) 
 	
 	</script>
 

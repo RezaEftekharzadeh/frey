@@ -10,11 +10,10 @@
 <jsp:include page="header.jsp" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<div align="center">
-		<form action="create_silencer" method="post">
+		<form action="create_silencer_tread" method="post">
 		
 			Tread size:<input type="text" name="tread">
-			Core size: <input type="text" name="core">
-			Price: <input type="text" name="price">
+			
 			<input type="submit" value="save">
 			
 			<br/><br/>
@@ -24,10 +23,24 @@
 			
 			</select> 
 			
+		
+	
+		</form>
+		<form action="create_silencer_core" method="post">
+		
+			
+			Core size: <input type="text" name="core">
+			
+			<input type="submit" value="save">
+			
+			<br/><br/>
+			
 			<select>
 				<option value>
-	
+			
 			</select> 
+			
+			
 	
 		</form>
 	</div>

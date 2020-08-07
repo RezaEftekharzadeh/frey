@@ -24,3 +24,7 @@
 0:0:0:0:0:0:0:1 - - [05/Aug/2020:09:51:14 +0200] "GET /SilencerStoreProject/admin/silencer_form.jsp HTTP/1.1" 200 905
 0:0:0:0:0:0:0:1 - - [05/Aug/2020:09:51:24 +0200] "GET /SilencerStoreProject/admin/silencer_form.jsp HTTP/1.1" 200 905
 0:0:0:0:0:0:0:1 - - [05/Aug/2020:09:53:06 +0200] "GET /SilencerStoreProject/admin/create_silencer? HTTP/1.1" 404 801
+127.0.0.1 - - [05/Aug/2020:10:50:11 +0200] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [05/Aug/2020:10:50:28 +0200] "GET /SilencerStoreProject/admin/silencer_form.jsp HTTP/1.1" 200 956
+0:0:0:0:0:0:0:1 - - [05/Aug/2020:10:50:46 +0200] "POST /SilencerStoreProject/admin/create_silencer HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [05/Aug/2020:10:52:42 +0200] "POST /SilencerStoreProject/admin/create_silencer HTTP/1.1" 200 -
