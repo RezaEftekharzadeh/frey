@@ -44,6 +44,12 @@ public class Silencer implements java.io.Serializable {
 		this.coreSize = coreSize;
 		this.price = price;
 	}
+	
+	public Silencer(String threadSize, String coreSize, float price) {
+		this.threadSize = threadSize;
+		this.coreSize = coreSize;
+		this.price=price;
+	}
 
 	public Silencer(int silencerId, String threadSize, String coreSize, float price, byte[] image, String description,
 			Set<OrderDetail> orderDetails) {

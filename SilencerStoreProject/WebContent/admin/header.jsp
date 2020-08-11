@@ -11,7 +11,7 @@
 
 	<div>
 		<a href="list_users">Users</a> |
-		<a href="suppressor">Suppressor</a> |
+		<a href="list_silencer">suppressor</a> |
 		<a href="customers">Customers</a> |
 		<a href="reviews">Reviews</a> |
 		<a href="orders">Orders</a> 

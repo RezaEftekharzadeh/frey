@@ -1,0 +1,37 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div align="center">
+		<table border="1" cellPadding="5" id="list">
+			<tr>
+				<th>index</th>
+				<th>ID</th>
+				<th>Tread Size</th>
+				<th>Core Size</th>
+				<th>Price</th>
+			</tr>
+			<c:forEach var="silencer" items="${listSilencer}" varStatus="status">
+				<tr>
+					<td>${status.index+1}</td>
+					<td>${silencer.silencerId}</td>
+					<td>${silencer.threadSize}</td>
+					<td>${silencer.coreSize}</td>
+					<td>${silencer.price}</td>
+					<td>
+						<a href="edit_user?id=${user.userId}">Edit</a>
+						<a href="javascript:confirmDelete(${user.userId})">Delete</a>
+					</td>
+				</tr>
+			</c:forEach>
+		
+		</table>
+		
+	</div>
+</body>
+</html>
