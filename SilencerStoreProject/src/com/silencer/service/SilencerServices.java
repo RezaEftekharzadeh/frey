@@ -78,12 +78,46 @@ public class SilencerServices {
 		requestDispatcher.forward(request, response);
 		
 	}
+	
 	public void deleteSilencer() throws ServletException, IOException {
 		int userId = Integer.parseInt(request.getParameter("id"));
 		silencerDAO.delete(userId);
 		listSilencer("**Silencer deleted**",0);
 		
 		
+	}
+	public void editSilencer() throws ServletException, IOException {
+		
+		int silencerID= Integer.parseInt(request.getParameter("id"));
+		
+		Silencer silencer= silencerDAO.get(silencerID);
+		
+		if (silencer != null) {
+			
+			request.setAttribute("silencer", silencer);
+			RequestDispatcher dispatcher= request.getRequestDispatcher("silencer_form.jsp");
+			dispatcher.forward(request, response);
+			
+			
+			  }else { 
+				  listSilencer("***Silencer with Id '"+ silencerID +"' does not exist***", 2); }
+	
+	}
+	
+
+	public void updateSilencer() throws ServletException, IOException {
+		
+		String tread = request.getParameter("tread");
+		String core = request.getParameter("core");
+		float price = Integer.parseInt(request.getParameter("price"));
+		int silencerId= Integer.parseInt(request.getParameter("silencerId"));
+
+		  
+			  Silencer silencer = new Silencer(silencerId, tread, core, price);
+			  silencerDAO.update(silencer);
+			  
+			  listSilencer("**Silencer updated successfully**",1);
+
 	}
 
 }
