@@ -20,14 +20,14 @@ public class CustomerDAO extends JpaDAO<Customer> implements GenericDAO<Customer
 	}
 
 	@Override
-	public Customer get(Object id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Customer get(Object customerId) {
+		
+		return super.find(Customer.class, customerId);
 	}
 
 	@Override
-	public void delete(Object id) {
-		// TODO Auto-generated method stub
+	public void delete(Object customerId) {
+		super.delete(Customer.class, customerId);
 		
 	}
 
@@ -39,7 +39,7 @@ public class CustomerDAO extends JpaDAO<Customer> implements GenericDAO<Customer
 
 	@Override
 	public long count() {
-		// TODO Auto-generated method stub
+		
 		return 0;
 	}
 	public Customer findByEmail(String email) {

@@ -45,7 +45,7 @@
 	    <c:if test = "${customer != null}">
 	    
 		     	<form action="update_customer" method="post" id="customerForm">
-		     	<input type="hidden" name = "userId" value= ${user.userId } >
+		     	<input type="hidden" name = "customerId" value= ${customer.customerId } >
 		     	
 		</c:if>
 		    
@@ -71,8 +71,12 @@
     				<td><input type="tel" name="phone" id="phone" size="45"  value= ${customer.phone }>
     			</tr>
     			<tr >
-    				<td align="right">County:</td>
-    				<td><input type="text" name="country" id="country" size="45"  value= ${customer.county }>
+    				<td align="right">Discount:</td>
+    				<td><input type="text" name="discount" id="discount" size="5"  value= ${customer.discount }>%</td>
+    			</tr>
+    			<tr >
+    				<td align="right">Country:</td>
+    				<td><input type="text" name="country" id="country" size="45"  value= ${customer.country }>
     			</tr>
     			<tr >
     				<td align="right">City:</td>
@@ -80,14 +84,14 @@
     			</tr>
     				<tr >
     				<td align="right">ZipCode:</td>
-    				<td><input type="text" name="zipCode" id="zipCode" size="45"  value= ${customer.zipCode }>
+    				<td><input type="text" name="zipCode" id="zipCode" size="45"  value= ${customer.zipcode }>
     			</tr>
     		
     			<tr >
     				<td align="right">Address:</td>
     				<td><input type="text" name="address" id="address" size="45" value= ${customer.address }>
     			</tr>
-    			
+    		    			
     			<tr >
     				<td align="right">Password:</td>
     				<td><input type="password" name="password" id="password" size="45"  value= ${customer.password }>
@@ -120,8 +124,19 @@
 				},
 				
 				fullName: "required",
+				discount: "number",
 				phone: "required",
-			    password: "required",
+				
+			    password: {
+			    	required: true,
+			    	minlength: 6
+			    },
+			    
+			    confirmpassword:{
+			    	required: true,
+			    	equalTo: "#password"
+			    	
+			    },
 			    
 			    
 			},
@@ -134,10 +149,20 @@
 				},
 				
 				fullName: "Please enter Full Name",
+				discount: "Enter discount between 0-100",
 				phone: "Please enter phone",
-				password: "Please enter password"
 				
-			
+				password: {
+					required:"Please enter password",
+					minlength: "At least 6 characters"
+				},
+				
+				confirmpassword: {
+					required: "Please write password here again",
+					equalTo: "Password does not match"
+					
+				}
+	
 			}
 		});
 		

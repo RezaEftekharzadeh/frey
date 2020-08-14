@@ -1,6 +1,7 @@
 package com.silencer.service;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -12,9 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.silencer.dao.CustomerDAO;
-import com.silencer.dao.UserDAO;
+
 import com.silencer.entity.Customer;
-import com.silencer.entity.Users;
+
 
 public class CustomerServices {
 	private static int failOrOk;
@@ -72,88 +73,99 @@ public class CustomerServices {
 	  String city= request.getParameter("city");
 	  String address= request.getParameter("address");
 	  String password= request.getParameter("password");
+	  String discount=request.getParameter("discount");
 	  
+
+	  Customer existCustomer= customerDAO.findByEmail(email);
 	  
+	  if( existCustomer != null) {
 	  
-	  
-	  Customer existUser= customerDAO.findByEmail(email);
-	  
-	  if( existUser != null) {
-	  
-	  String message = "***Customer with email '"+ email + "' already exist***" ;
-	  failOrOk=2;
-	  
-	  request.setAttribute("messageFailed", message); RequestDispatcher dispatcher
-	  = request.getRequestDispatcher("customer_form.jsp");
-	  dispatcher.forward(request, response);
+		  String message = "***Customer with email '"+ email + "' already exist***" ;
+		  failOrOk=2;
+		  
+		  request.setAttribute("messageFailed", message); RequestDispatcher dispatcher
+		  = request.getRequestDispatcher("customer_form.jsp");
+		  dispatcher.forward(request, response);
 	  
 	  }else {
 	  
-	  Customer customer= new Customer(email,fullName,address,city,country,phone,zipCode,password);
-	  customerDAO.create(customer);
-	  listCustomer("**Customer created successfully**",1);
+		  Customer customer= new Customer(email,fullName,address,city,country,phone,zipCode,password,discount);
+		  customerDAO.create(customer);
+		  listCustomer("**Customer created successfully**",1);									
 	  
 	  
 	  }
 	  
 	  }
 	  
-		/*
-		 * public void editUser() throws ServletException, IOException {
-		 * 
-		 * int userID= Integer.parseInt(request.getParameter("id"));
-		 * 
-		 * Users user= userDAO.get(userID);
-		 * 
-		 * if (user != null) {
-		 * 
-		 * request.setAttribute("user", user); RequestDispatcher dispatcher=
-		 * request.getRequestDispatcher("user_create.jsp"); dispatcher.forward(request,
-		 * response);
-		 * 
-		 * 
-		 * }else { listUser("***User with Id '"+ userID +"' does not exist***", 2); }
-		 * 
-		 * }
-		 * 
-		 * 
-		 * public void updateUser() throws ServletException, IOException {
-		 * 
-		 * String email= request.getParameter("email"); String fullName=
-		 * request.getParameter("fullName"); String password =
-		 * request.getParameter("password"); int userId =
-		 * Integer.parseInt(request.getParameter("userId"));
-		 * 
-		 * Users userByEmail = userDAO.findByEmail(email);
-		 * 
-		 * 
-		 * 
-		 * 
-		 * if (userByEmail != null && userId != userByEmail.getUserId()) {
-		 * 
-		 * listUser("***Can't update, User with email '"+ email +"' already exist***",
-		 * 2);
-		 * 
-		 * 
-		 * }else{
-		 * 
-		 * Users user = new Users(userId, email, fullName, password);
-		 * userDAO.update(user);
-		 * 
-		 * listUser("**User updated successfully**",1);
-		 * 
-		 * 
-		 * }
-		 * 
-		 * }
-		 * 
-		 * public void deleteUser() throws ServletException, IOException { int userId =
-		 * Integer.parseInt(request.getParameter("id")); userDAO.delete(userId);
-		 * listUser("**User deleted**",1);
-		 * 
-		 * 
-		 * }
-		 */
+		
+		  public void editCustomer() throws ServletException, IOException {
+		  
+		  int customerID= Integer.parseInt(request.getParameter("id"));
+		  
+		  Customer customer= customerDAO.get(customerID);
+		  
+		  if (customer != null) {
+		  
+			  request.setAttribute("customer", customer);
+			  RequestDispatcher dispatcher= request.getRequestDispatcher("customer_form.jsp");
+			  dispatcher.forward(request, response);
+		  
+		  
+		  }else {
+			  
+			  listCustomer("***User with Id '"+ customerID +"' does not exist***", 2); 
+			  
+			  }
+		  
+		  }
+		  
+		  
+			
+			  public void updateCustomer() throws ServletException, IOException {
+			  
+				  String fullName= request.getParameter("fullName");
+				  String email= request.getParameter("email"); 
+				  String phone= request.getParameter("phone");
+				  String country= request.getParameter("country");
+				  String zipCode= request.getParameter("zipCode");
+				  String city= request.getParameter("city");
+				  String address= request.getParameter("address");
+				  String password= request.getParameter("password");
+				  String discount=request.getParameter("discount");
+				  
+				  int customerId = Integer.parseInt(request.getParameter("customerId"));
+			
+			  
+				  Customer existCustomer= customerDAO.findByEmail(email);
+			  
+
+			  if (existCustomer != null && customerId != existCustomer.getCustomerId()) {
+			  
+				  listCustomer("***Can't update, Customer with email '"+ email +"' already exist***", 2);
+			  
+			  
+			  }else{
+			  
+				  Customer customer = new Customer(customerId,email,fullName,address,city,country,phone,zipCode,password,discount);
+				  customerDAO.update(customer);
+				  listCustomer("**Customer updated successfully**",1);
+			
+			  }
+			  
+			  }
+
+			public void deleteCustomer() throws ServletException, IOException {
+				int customerId = Integer.parseInt(request.getParameter("id"));
+				System.out.println(customerId);
+				customerDAO.delete(customerId);
+				listCustomer("**Customer deleted**",1);
+				
+			}
+			  
+				
+			 
+		 
 	 
 
 }

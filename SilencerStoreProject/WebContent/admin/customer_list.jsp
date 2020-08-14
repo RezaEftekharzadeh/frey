@@ -50,7 +50,7 @@
 				<th>Country</th>
 				<th>City</th>
 				<th>Phone</th>
-				<th>Register Date</th>
+				<th>Discount</th>
 				<th>Actions</th>
 			</tr>
 			<c:forEach var="customer" items="${listCustomer}" varStatus="status">
@@ -62,6 +62,7 @@
 					<td>${customer.country}</td>
 					<td>${customer.city}</td>
 					<td>${customer.phone}</td>
+					<td>${customer.discount}%</td>
 					
 					<td>
 						<a href="edit_customer?id=${customer.customerId}">Edit</a>
@@ -81,11 +82,11 @@
      <jsp:include page="footer.jsp" />
      
      <script>
-		function confirmDelete(userId){
+		function confirmDelete(customerId){
 		
 			if(confirm('Are you sure that want to delete ' + customerId + '?')){
 				
-				window.location= 'delete_customer?id='+ customer.customerId ;
+				window.location= 'delete_customer?id='+ customerId ;
 			}
 		
 		}
