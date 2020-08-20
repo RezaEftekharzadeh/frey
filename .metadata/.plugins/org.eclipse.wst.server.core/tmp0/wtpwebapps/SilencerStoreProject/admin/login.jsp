@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@ page import="net.tanesha.recaptcha.ReCaptcha"%>
+<%@ page import="net.tanesha.recaptcha.ReCaptchaFactory"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,13 +24,33 @@
 	
 </head>
 <body>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <div align="center">
 
 	<div >
 		 <img src="../images/admin-page.jpg">
 		 <h3>Admin login page</h3>
 	</div>
+	
+	<c:if test="${message != null}">
+	
+		<div align="center">
+			<h4><i><p style="color:red;">${message}</p></i></h4>
+			
+		</div>
+
+	</c:if>
+	
+	
 	<form action="login" id="loginForm" method="post">
+		
+	<!-- 	<br/>
+			<div class="g-recaptcha" data-sitekey="6Le81cAZAAAAAFWBTZZO6fvx0noa6ghCqq0cP60o"></div>
+	    <br/>  -->
+	
+      
 		<table>
 			<tr>
 				<td align="right">Email:</td>
@@ -41,9 +65,9 @@
 			<tr >
 				<td colspan="2" align="center"  ><input type="submit" value="Login" size="20"></td>
 			</tr>
-		
+	 
 		</table>
-
+ 
 	</form>
 </div>
 <script type="text/javascript">

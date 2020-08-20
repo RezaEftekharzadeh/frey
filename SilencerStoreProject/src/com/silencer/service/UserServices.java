@@ -10,6 +10,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.silencer.dao.UserDAO;
 import com.silencer.entity.Users;
@@ -144,7 +145,43 @@ public class UserServices {
 		
 	}
 
+	public void login() throws ServletException, IOException {
+		String email= request.getParameter("email");
+		String password = request.getParameter("password");
+		
+		boolean checkLogin= userDAO.checkLogin(email, password);
+		
+		if(checkLogin) {
+			System.out.println("Login OK");
+			
+			request.getSession().setAttribute("userEmail", email);
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/");
+			dispatcher.forward(request,response);
+			
+		}else {
+			
+			request.setAttribute("message", "Email or Password is not correct");
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
+			dispatcher.forward(request,response);
+		}
+		
+		
+		
+	}
+	public void logout() throws ServletException, IOException {
+		
+		HttpSession session = request.getSession();
+		session.removeAttribute("userEmail");
+		
+		RequestDispatcher dispatcher= request.getRequestDispatcher("login.jsp");
+		dispatcher.forward(request, response);
+
+	}
 }
+	
+	
 
 
 

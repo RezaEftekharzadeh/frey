@@ -14,10 +14,17 @@ import javax.servlet.http.HttpServletResponse;
 public class AdminHomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public AdminHomeServlet() {
+	public AdminHomeServlet() {
         super();
        
     }
+	
+	  
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
+			  throws ServletException, IOException { 
+		  doGet(req, resp);
+		  
+	  }
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -27,8 +34,6 @@ public class AdminHomeServlet extends HttpServlet {
 		requestDispatcher.forward(request, response);
 		
 	}
-
-
 
 
 }

@@ -1,5 +1,0 @@
-package com.silencer.dao;
-
-public class SilencerSizeDAO extends JpaDAO<SilencerSize> implements GenericDAO<T> {
-
-}

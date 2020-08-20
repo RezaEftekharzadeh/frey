@@ -12,6 +12,7 @@
   		
   		&nbsp;&nbsp;&nbsp;&nbsp;
   		<a href="frontend/login.jsp">Sign in</a> |
+  		<a href="/SilencerStoreProject/admin/">Admin</a> |
   		<a href="Register">Register</a> |
   		<a href="view_cart">Cart</a> 
   	</div>

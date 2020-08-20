@@ -128,6 +128,16 @@ public class UserDAOTest {
 		assertNotNull(user);
 	}
 	
+	@Test
+	public void testLogin() {
+		String email="somi@yahoo.com";
+		String password="123";
+		boolean x= userDao.checkLogin(email, password);
+		System.out.println(x);
+		
+		assertTrue(x);
+	}
+	
 	@AfterClass
 	public static void tearDown() {
 		entityManager.close();
