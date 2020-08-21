@@ -95,9 +95,48 @@ public class CustomerServices {
 	  
 	  
 	  }
+	 
 	  
 	  }
 	  
+	  public void registerCustomer(HttpServletRequest request, HttpServletResponse
+			  response) throws ServletException, IOException {
+			  
+			  String fullName= request.getParameter("fullName");
+			  String email= request.getParameter("email"); 
+			  String phone= request.getParameter("phone");
+			  String country= request.getParameter("country");
+			  String zipCode= request.getParameter("zipCode");
+			  String city= request.getParameter("city");
+			  String address= request.getParameter("address");
+			  String password= request.getParameter("password");
+			 
+			  
+
+			  Customer existCustomer= customerDAO.findByEmail(email);
+			  
+			  if( existCustomer != null) {
+			  
+				  String message = "***Customer with email '"+ email + "' already exist***" ;
+				  
+				  
+				  request.setAttribute("messageFailed", message); 
+				  RequestDispatcher dispatcher = request.getRequestDispatcher("frontend/register_form.jsp");
+				  dispatcher.forward(request, response);
+			  
+			  }else {
+			  
+				  Customer customer= new Customer(email,fullName,address,city,country,phone,zipCode,password);
+				  customerDAO.create(customer);
+				  
+				  String message = "User created successfully";
+				  request.setAttribute("message", message);
+				  
+				  RequestDispatcher dispatcher = request.getRequestDispatcher("/frontend/message.jsp");
+				  dispatcher.forward(request, response);
+
+			  }
+	  	}
 		
 		  public void editCustomer() throws ServletException, IOException {
 		  
@@ -157,9 +196,20 @@ public class CustomerServices {
 
 			public void deleteCustomer() throws ServletException, IOException {
 				int customerId = Integer.parseInt(request.getParameter("id"));
-				System.out.println(customerId);
-				customerDAO.delete(customerId);
-				listCustomer("**Customer deleted**",1);
+				
+			
+					customerDAO.delete(customerId);
+					listCustomer("**Customer deleted**",1);
+				
+				
+			}
+
+			public void showLogin() throws ServletException, IOException {
+				
+				String loginCustomer = "/frontend/login.jsp";
+				
+				RequestDispatcher dispatcher = request.getRequestDispatcher(loginCustomer);
+				dispatcher.forward(request, response);
 				
 			}
 			  

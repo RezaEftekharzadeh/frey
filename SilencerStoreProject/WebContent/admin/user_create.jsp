@@ -70,16 +70,17 @@
     				<td>Password:</td>
     				<td><input type="password" name="password" id="password" size="20"  value= ${user.password }>
     			</tr>
-    			<tr>
+    			<tr align="center">
     				<td align="center">
     					<button type="submit" >Save</button>&nbsp;&nbsp;&nbsp;&nbsp;
-    					<button onclick="javascript:history.go(-1);" >Cancel</button>
+    					
     				</td>
     			</tr>
     		
     	 </table>
     	
     	</form>
+    	<button onclick="javascript:history.go(-1);" >Cancel</button>
     		
     </div>
     

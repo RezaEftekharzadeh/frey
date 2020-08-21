@@ -95,6 +95,7 @@ public class UserServices {
 		
 		Users user= userDAO.get(userID);
 		
+		
 		if (user != null) {
 			
 			request.setAttribute("user", user);
@@ -103,7 +104,7 @@ public class UserServices {
 			
 			
 			  }else { 
-				  listUser("***User with Id '"+ userID +"' does not exist***", 2); }
+				  listUser("**You do not have permission to edith/delete**", 2); }
 	
 	}
 	
@@ -116,46 +117,52 @@ public class UserServices {
 		int userId = Integer.parseInt(request.getParameter("userId"));
 		
 		Users userByEmail = userDAO.findByEmail(email);
-		
-		
 
-		
 		  if (userByEmail != null && userId != userByEmail.getUserId()) {
 		
 			  listUser("***Can't update, User with email '"+ email +"' already exist***", 2);
-			 
-		  
+
 		  }else{
 		  
 			  Users user = new Users(userId, email, fullName, password);
 			  userDAO.update(user);
 			  
 			  listUser("**User updated successfully**",1);
-			 
-		  
 		  }
 
 	}
 
 	public void deleteUser() throws ServletException, IOException {
 		int userId = Integer.parseInt(request.getParameter("id"));
-		userDAO.delete(userId);
-		listUser("**User deleted**",1);
+
+		if(userId == 82 ) {
+
+			listUser("**It is not allowed**", 2);
+
+		}else {
+			
+			userDAO.delete(userId);
+			listUser("**User deleted**",1);
 		
-		
+		}
 	}
 
 	public void login() throws ServletException, IOException {
 		String email= request.getParameter("email");
 		String password = request.getParameter("password");
 		
+		
+		
 		boolean checkLogin= userDAO.checkLogin(email, password);
 		
 		if(checkLogin) {
 			System.out.println("Login OK");
+			Users userByEmail = userDAO.findByEmail(email);
+			int userID = userByEmail.getUserId();
 			
 			request.getSession().setAttribute("userEmail", email);
-			
+			request.getSession().setAttribute("userID", userID );
+
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/");
 			dispatcher.forward(request,response);
 			
@@ -166,14 +173,13 @@ public class UserServices {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
 			dispatcher.forward(request,response);
 		}
-		
-		
-		
+
 	}
 	public void logout() throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
 		session.removeAttribute("userEmail");
+		session.removeAttribute("userID");
 		
 		RequestDispatcher dispatcher= request.getRequestDispatcher("login.jsp");
 		dispatcher.forward(request, response);

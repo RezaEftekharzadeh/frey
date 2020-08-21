@@ -77,6 +77,20 @@ public class Customer implements java.io.Serializable {
 		this.password = password;
 		this.discount = discount;
 	}
+	
+	public Customer(String email, String fullName, String address, String city, String country, String phone,
+			String zipcode, String password) {
+		
+		this.email = email;
+		this.fullName = fullName;
+		this.address = address;
+		this.city = city;
+		this.country = country;
+		this.phone = phone;
+		this.zipcode = zipcode;
+		this.password = password;
+		
+	}
 
 
 	public Customer(String email, String fullName, String address, String city, String country, String phone,

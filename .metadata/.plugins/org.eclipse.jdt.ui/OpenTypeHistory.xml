@@ -2,5 +2,5 @@
 <typeInfoHistroy>
 <typeInfo handle="=SilencerStoreProject/src=/optional=/true=/=/maven.pomderived=/true=/&lt;com.silencer.dao{GenericDAO.java[GenericDAO" modifiers="513" timestamp="1594893089631"/>
 <typeInfo handle="=SilencerStoreProject/C:\/Users\/erice\/.m2\/repository\/org\/hibernate\/hibernate-core\/5.2.12.Final\/hibernate-core-5.2.12.Final.jar=/maven.pomderived=/true=/=/org.eclipse.jst.component.dependency=/\/WEB-INF\/lib=/=/maven.pomderived=/true=/=/org.eclipse.jst.component.archivename=/hibernate-core-5.2.12.Final.jar=/=/maven.groupId=/org.hibernate=/=/maven.artifactId=/hibernate-core=/=/maven.version=/5.2.12.Final=/=/maven.scope=/compile=/&lt;org.hibernate.boot.model(IdGeneratorStrategyInterpreter$GeneratorNameDeterminationContext.class[GeneratorNameDeterminationContext" modifiers="1545" timestamp="1590397666908"/>
-<typeInfo handle="=SilencerStoreProject/src=/optional=/true=/=/maven.pomderived=/true=/&lt;com.silencer.dao{JpaDAO.java[JpaDAO" modifiers="1" timestamp="1595229532957"/>
+<typeInfo handle="=SilencerStoreProject/src=/optional=/true=/=/maven.pomderived=/true=/&lt;com.silencer.dao{JpaDAO.java[JpaDAO" modifiers="1" timestamp="1597751585852"/>
 </typeInfoHistroy>

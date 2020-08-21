@@ -8,12 +8,13 @@
 	
 	<div >
 	  Welcome, <c:out value="${sessionScope.userEmail }"></c:out> | <a href="logout">Logout</a>
+	  <c:set var= "userId" scope= "session" value="${sessionScope.userID }"></c:set> 
 	</div>
 	<br><br>
 
 	<div>
-		<a href="list_users">Users</a> |
-		<a href="list_silencer">suppressor</a> |
+		<c:if test="${userId == 82}"><a href="list_users">Users</a> |</c:if>
+	    <a href="list_silencer">Suppressor</a> |
 		<a href="list_customers">Customers</a> |
 		<a href="reviews">Reviews</a> |
 		<a href="orders">Orders</a> 

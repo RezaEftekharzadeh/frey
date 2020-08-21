@@ -103,13 +103,14 @@
     			<tr >
     				<td align="right">
     					<button type="submit" >Save</button>&nbsp;&nbsp;&nbsp;&nbsp;
-    					<button onclick="javascript:history.go(-1);" >Cancel</button>
+    					
     				</td>
     			</tr>
     		
     	 </table>
     	
     	</form>
+    	<button onclick="javascript:history.go(-1);" >Cancel</button>
     		
     </div>
     
@@ -161,7 +162,7 @@
 					required: "Please write password here again",
 					equalTo: "Password does not match"
 					
-				}
+				},
 	
 			}
 		});
