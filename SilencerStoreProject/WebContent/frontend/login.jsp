@@ -8,7 +8,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Admin Login</title>
+	<title>Customer Login</title>
 	
 	<script 
 			src="https://code.jquery.com/jquery-3.3.1.min.js" 

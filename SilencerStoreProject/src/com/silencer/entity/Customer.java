@@ -26,9 +26,10 @@ import com.silencer.entity.SilencerOrder;
 @Entity
 @Table(name = "customer", catalog = "freydevikdb")
 @NamedQueries({
-	@NamedQuery(name= "Customer.findAll", query= "SELECT u FROM Customer u ORDER BY u.fullName"),
-	@NamedQuery(name= "Customer.findByEmail", query= "SELECT u FROM Customer u WHERE u.email = :email"),
-	@NamedQuery(name= "Customer.countAll", query= "SELECT COUNT(*) FROM Customer u" )
+	@NamedQuery(name= "Customer.findAll", query= "SELECT c FROM Customer c ORDER BY c.fullName"),
+	@NamedQuery(name= "Customer.findByEmail", query= "SELECT c FROM Customer c WHERE c.email = :email"),
+	@NamedQuery(name= "Customer.checkLogin", query= "SELECT c FROM Customer c WHERE c.email = :email AND c.password = :password"),
+	@NamedQuery(name= "Customer.countAll", query= "SELECT COUNT(*) FROM Customer c" )
 })
 
 public class Customer implements java.io.Serializable {

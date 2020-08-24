@@ -9,6 +9,7 @@
 <title>List Users page</title>
 </head>
 <body>
+	
 	<jsp:include page="header.jsp" />
 	<div align="center">
 	     <h1>List User Dashboard</h1>
@@ -37,9 +38,7 @@
    		
    		</c:if>
     </c:if>
-   
- 
-    
+
 	<div align="center">
 		<table border="1" cellPadding="5" id="list">
 			<tr>
@@ -50,14 +49,19 @@
 				<th>Actions</th>
 			</tr>
 			<c:forEach var="user" items="${listUser}" varStatus="status">
+			<c:set var= "userId" scope="request" value="${user.userId }" /> 
 				<tr>
 					<td>${status.index+1}</td>
 					<td>${user.userId}</td>
 					<td>${user.email}</td>
 					<td>${user.fullName}</td>
 					<td>
+					
 						<a href="edit_user?id=${user.userId}">Edit</a>
-						<a href="javascript:confirmDelete(${user.userId})">Delete</a>
+						<c:if test="${userId != 82}">
+							<a href="javascript:confirmDelete(${user.userId})">Delete</a>
+						</c:if>
+						
 					</td>
 				</tr>
 			</c:forEach>
@@ -65,6 +69,9 @@
 		</table>
 		
 	</div>
+	
+	
+	
 	<div align="center">
 		<a href="javascript:fnExcelReport()">Download this table</a>
 	</div>

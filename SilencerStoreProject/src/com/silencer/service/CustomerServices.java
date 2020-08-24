@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.silencer.dao.CustomerDAO;
 
 import com.silencer.entity.Customer;
+import com.silencer.entity.Users;
 
 
 public class CustomerServices {
@@ -60,8 +61,6 @@ public class CustomerServices {
 		
 	}
 
-
-	
 	  public void createCustomer(HttpServletRequest request, HttpServletResponse
 	  response) throws ServletException, IOException {
 	  
@@ -92,8 +91,7 @@ public class CustomerServices {
 		  Customer customer= new Customer(email,fullName,address,city,country,phone,zipCode,password,discount);
 		  customerDAO.create(customer);
 		  listCustomer("**Customer created successfully**",1);									
-	  
-	  
+
 	  }
 	 
 	  
@@ -158,9 +156,7 @@ public class CustomerServices {
 			  }
 		  
 		  }
-		  
-		  
-			
+
 			  public void updateCustomer() throws ServletException, IOException {
 			  
 				  String fullName= request.getParameter("fullName");
@@ -210,6 +206,33 @@ public class CustomerServices {
 				
 				RequestDispatcher dispatcher = request.getRequestDispatcher(loginCustomer);
 				dispatcher.forward(request, response);
+				
+			}
+
+			public void login() throws ServletException, IOException {
+	
+				String email= request.getParameter("email");
+				String password = request.getParameter("password");
+		
+				Customer checkLogin=  customerDAO.checkLogin(email, password);
+				
+				if(checkLogin == null) {
+					
+					request.setAttribute("message", "Email or Password is not correct");
+					
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/frontend/login.jsp");
+					dispatcher.forward(request,response);
+			
+					
+					
+				}else {
+					
+					request.getSession().setAttribute("loggedInCustomer", checkLogin);
+
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/frontend/customer_profile.jsp");
+					dispatcher.forward(request,response);
+					
+				}
 				
 			}
 			  

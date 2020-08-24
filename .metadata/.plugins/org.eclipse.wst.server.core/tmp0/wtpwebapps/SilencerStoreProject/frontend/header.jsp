@@ -1,4 +1,4 @@
-
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
  	<div align="center">
  		<img  src="images/header.jpg" />
@@ -6,14 +6,25 @@
   	
   	<br><br>
   	
+  	
+  	
   	<div align="center">
   		<input type="text" name="keyword" size="55" />
   		<input type="button" value="Search" />
   		
   		&nbsp;&nbsp;&nbsp;&nbsp;
-  		<a href="login">Sign in</a> |
-  		<a href="/SilencerStoreProject/admin/">Admin</a> |
-  		<a href="register">Register</a> |
-  		<a href="view_cart">Cart</a> 
+  		<c:if test="${loggedInCustomer == null }">
+	  		<a href="login">Sign in</a> |
+	  		<a href="/SilencerStoreProject/admin/">Admin</a> |
+	  		<a href="register">Register</a> |
+	  		<a href="view_cart">Cart</a> 
+  		</c:if>
+  		
+  		<c:if test="${loggedInCustomer != null }">
+	  		<a>Welcome, ${loggedInCustomer.fullName}</a> |
+	  		<a href=""></a> |
+	  		<a href="view_cart">Cart</a> |
+	  		<a href="logout">Logout</a> 
+  		</c:if>
   	</div>
 

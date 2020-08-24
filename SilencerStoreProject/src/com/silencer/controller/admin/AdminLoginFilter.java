@@ -21,7 +21,6 @@ public class AdminLoginFilter implements Filter {
         
     }
 
-	
 	public void destroy() {
 		
 	}
@@ -31,6 +30,7 @@ public class AdminLoginFilter implements Filter {
 		
 		HttpServletRequest httpRequest = (HttpServletRequest) request;
 		//it is false because I want to be by default false
+		//we get the current session and the code does not create a new session if it does not exist!
 		HttpSession session= httpRequest.getSession(false);
 		
 		boolean loggedIn= session != null && session.getAttribute("userEmail") != null;
@@ -45,10 +45,10 @@ public class AdminLoginFilter implements Filter {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/");
 			dispatcher.forward(request, response);
 			
-		}else
-		
-		if(loggedIn || loginRequest) {
+		}else if(loggedIn || loginRequest) {
+			
 			chain.doFilter(request, response);
+			
 		}else {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
 			dispatcher.forward(request, response);

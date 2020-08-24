@@ -1,6 +1,8 @@
 package com.silencer.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.EntityManager;
 
@@ -51,6 +53,26 @@ public class CustomerDAO extends JpaDAO<Customer> implements GenericDAO<Customer
 			
 		}
 		return null;
+	}
+
+	public Customer checkLogin(String email, String password) {
+		
+		Map<String, Object> parameters = new HashMap<>();
+		
+			parameters.put("email",email);
+			parameters.put("password", password);
+		
+		List<Customer> listCustomers = super.findWithNamedQuery("Customer.checkLogin", parameters);
+		
+		if(listCustomers.size()==1) {
+			
+			return listCustomers.get(0);
+		}
+		
+		return null;
+		
+		
+		
 	}
 
 }

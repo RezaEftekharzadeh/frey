@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div align="center">
+  		Welcome, <c:out value="${sessionScope.customerEmail }"></c:out> | <a href="logout">Logout</a>
+  	</div>
+
+	<div align="center">
+	
+		<h3><p style= "color: green">${message}</p></h3>
+		
+		<h4></h4>
+
+	</div>
+
+<jsp:directive.include file="footer.jsp" />
+
+</body>
+</html>
