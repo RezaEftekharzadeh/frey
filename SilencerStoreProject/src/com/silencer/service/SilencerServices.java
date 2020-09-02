@@ -51,17 +51,17 @@ public class SilencerServices {
 		silencerDAO.create(silencer);
 		
 		String message= "Silencer created";
-		listSilencer(message,0);
+		listSilencer(message,0,1);
 
 	}
 	
 
 	public void listSilencer() throws ServletException, IOException {
-		listSilencer(null,0);
+		listSilencer(null,0,1);
 		
 	}
 	//int failOrOK send message to user_list with different format
-	public void listSilencer(String message, int failOrOk) throws ServletException, IOException {
+	public void listSilencer(String message, int failOrOk , int admin) throws ServletException, IOException {
 
 		List<Silencer> listSilencer = silencerDAO.listAll();
 		
@@ -72,17 +72,31 @@ public class SilencerServices {
 			request.setAttribute("message2", failOrOk);
 			
 		}
+		String indexPage=null;
+		if(admin == 1) {
+			indexPage= "silencer_form.jsp";
+		}else {
+			indexPage= "frontend/shopping_cart.jsp";
+		}
 		
-		String indexPage= "silencer_form.jsp";
 		RequestDispatcher requestDispatcher= request.getRequestDispatcher(indexPage);
 		requestDispatcher.forward(request, response);
 		
 	}
 	
+	public void pureListSilencer() {
+		
+		List<Silencer> listTreadSilencer = silencerDAO.listTread();
+		List<Silencer> listCoreSilencer = silencerDAO.listCore();
+		
+		request.setAttribute("listTreadSilencer", listTreadSilencer);	
+		request.setAttribute("listCoreSilencer", listCoreSilencer);	
+	}
+	
 	public void deleteSilencer() throws ServletException, IOException {
 		int userId = Integer.parseInt(request.getParameter("id"));
 		silencerDAO.delete(userId);
-		listSilencer("**Silencer deleted**",0);
+		listSilencer("**Silencer deleted**",0,1);
 		
 		
 	}
@@ -100,7 +114,7 @@ public class SilencerServices {
 			
 			
 			  }else { 
-				  listSilencer("***Silencer with Id '"+ silencerID +"' does not exist***", 2); }
+				  listSilencer("***Silencer with Id '"+ silencerID +"' does not exist***", 2,1); }
 	
 	}
 	
@@ -116,7 +130,7 @@ public class SilencerServices {
 			  Silencer silencer = new Silencer(silencerId, tread, core, price);
 			  silencerDAO.update(silencer);
 			  
-			  listSilencer("**Silencer updated successfully**",1);
+			  listSilencer("**Silencer updated successfully**",1,1);
 
 	}
 

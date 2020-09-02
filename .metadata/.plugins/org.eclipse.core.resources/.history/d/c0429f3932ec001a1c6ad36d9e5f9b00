@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="Store1.jsp" method="post" >
+<%   
+int n1=10;
+for(int i=1;i<=n1;i++)
+{
+%>
+   <pre>
+    Enter the First Name  :  <input id="FName<%=i %>" type="text" name="FName<%=i %>"> <br>
+    Enter the Middle Name :  <input id="MName<%=i %>" type="text" name="MName<%=i %>"> <br>
+
+    <input type="button" value="Save" >  
+    <input type="button"value="Edit" >  
+
+   </pre>
+<%
+}
+%>
+
+<input type="submit" Value="Submit" name="Submit">
+</form>
+</body>
+</html>

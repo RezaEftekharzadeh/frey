@@ -226,15 +226,24 @@ public class CustomerServices {
 					
 					
 				}else {
-					
 					request.getSession().setAttribute("loggedInCustomer", checkLogin);
-
-					RequestDispatcher dispatcher = request.getRequestDispatcher("/frontend/customer_profile.jsp");
-					dispatcher.forward(request,response);
+					showCustomerProfile();
 					
 				}
 				
+				
+					
+				}
+			public void showCustomerProfile() throws ServletException, IOException {
+				
+				
+
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/frontend/customer_profile.jsp");
+				dispatcher.forward(request,response);
+				
 			}
+
+			
 			  
 				
 			 

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.silencer.service.CustomerServices;
 
-@WebServlet("/login")
+@WebServlet("/login_customer_form")
 public class ShowCustomerLoginPageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -24,15 +24,8 @@ public class ShowCustomerLoginPageServlet extends HttpServlet {
 		
 			CustomerServices customerService = new CustomerServices(request, response);
 			customerService.showLogin();			
-		
-		
+
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
-			throws ServletException, IOException {
-			
-			CustomerServices customerService = new CustomerServices(request,response);
-			customerService.login();
-		}
-
+	
 }

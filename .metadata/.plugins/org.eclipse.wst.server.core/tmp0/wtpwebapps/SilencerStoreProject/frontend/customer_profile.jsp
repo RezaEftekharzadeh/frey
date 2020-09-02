@@ -16,9 +16,62 @@
 		<h3><p style= "color: green">${message}</p></h3>
 		
 		<h4></h4>
+		<a href = "shop_customer" >Add New Item</a>
 
+	
+		<c:set var="cart" value="${sessionScope['cart']}" />
+		<c:set var="discount" value="${sessionScope['discount']}" />
+		<c:set var="cartTotal" value="${cart.totalItems}" />
+		<c:set var="afterDiscount" value="${sessionScope['afterDiscount']}" ></c:set>
+		
+		<select name="silencer">
+			    <c:forEach var="silencer" items="${listSilencer}">
+			        <option value="">${silencer.threadSize}</option>
+			    </c:forEach>
+		</select>
+		
+		<select name="silencer">
+			    <c:forEach var="silencer" items="${listSilencer}">
+			        <option value="">${silencer.coreSize}</option>
+			    </c:forEach>
+		</select>
+
+		 <p id="disprice"></p>
+		  <p id="test"></p>
+		<c:if test="${cartTotal > 0 }">
+		    <div>
+		    	<form>
+		    		<table border="1">
+		    			<tr>
+			    			<th>No</th>
+			    			<th>Silencer</th>
+			    			<th>Quantity</th>
+			    			<th>Price ($)</th>
+			    			<th>Your Discount</th>
+			    			<th>Subtotal ($)</th>
+			    			<th>After discount ($)</th>
+			    			<th>
+			    				<a href=""><b>Clear Cart</b></a>
+			    			</th>
+		    			</tr>
+		    			<c:forEach items="${cart.items}" var="item" varStatus="status">
+		    				<tr>
+		    					<td>${status.index +1 }</td>
+		    					<td>${item.key.threadSize}</td>
+		    					<td align="center" >${item.value }</td>
+		    					<td>${item.key.price}</td>
+		    					<td align="center">${discount  } %</td>
+		    					<td>${(item.value * item.key.price)} </td>
+		    					<td>${afterDiscount * item.value}</td>
+			    					
+								
+		    				</tr>
+		    			</c:forEach>
+		    		</table>
+		    	</form>
+		    </div>
+		</c:if>
 	</div>
-
 <jsp:directive.include file="footer.jsp" />
 
 </body>

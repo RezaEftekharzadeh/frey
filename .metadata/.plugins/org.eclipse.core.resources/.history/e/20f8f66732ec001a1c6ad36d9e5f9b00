@@ -1,0 +1,66 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ 1:
+ 3: <B>Form</B>
+ 4: <FORM ACTION=dynamicForm.jsp METHOD=POST>
+ 5: <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+ 6: <%  String[] textFields = {"FirstName","LastName","Address","City","Zip"};
+ 7:     for(int j=0; j<textFields.length; j++){     %>
+ 8:     <TR>    <TD> <%=textFields[j]%>:                       </TD>
+ 9:             <TD> <INPUT TYPE=TEXT NAME=<%=textFields[j]%>> </TD>
+10:     </TR>
+11: <%  }   %>
+12:     <TR>    <TD> State  </TD>
+13:             <TD> <SELECT NAME=State>
+14: <%  String[] states = {"AZ", "CA", "NM", "MA", "ME", "MD", "..."};
+15:     for(int s=0; s<states.length; s++) {    %>
+16:                     <OPTION><%=states[s]%></OPTION>
+17: <%  }   %>
+18:                  </SELECT></TD>
+19:     </TR>
+20:     <TR>    <TD> Card Number  </TD>
+21:             <TD> <INPUT TYPE=TEXT NAME=cNumber></TD>
+22:     </TR>
+23:     <TR>    <TD> Card Type  </TD>
+24:             <TD> <SELECT NAME=CardType>
+25: <%  String[] cTypes = {"Amex", "Visa", "Master Card", "Discovery", "..."};
+26:     for(int t=0; t<cTypes.length; t++) {    %>
+27:                     <OPTION><%=cTypes[t]%></OPTION>
+28: <%  }   %>
+29:                  </SELECT></TD>
+30:     </TR>
+31:     <TR>    <TD> Expiration Date (MM/DD/YYYY) </TD>
+32: <TD> <INPUT TYPE=TEXT NAME=cMonth SIZE=2><INPUT TYPE=TEXT NAME=cDay SIZE=2>
+33:             <SELECT NAME=cYear>
+34:             <%  int startYear = 2000;
+35:                 int endYear = 2010;
+36:                 for(int y=startYear; y<endYear; y++) {    %>
+37:                     <OPTION><%=y%></OPTION>
+38:             <%  }   %>
+39:             </SELECT></TD>
+40:     </TR>
+41: </TABLE>
+42:     <INPUT TYPE=SUBMIT VALUE=Submit>
+43: </FORM>
+44: <HR>
+45: <B>Form Content</B><BR>
+46: <TABLE>
+47: <%  Enumeration parameters = request.getParameterNames();
+48:     while(parameters.hasMoreElements()){
+49:         String parameterName = (String)parameters.nextElement();
+50:         String parameterValue = request.getParameter(parameterName); %>
+51:         <TR>
+52:             <TD><%=parameterName%></TD>
+53:             <TD><%=parameterValue%></TD>
+54:         </TR>
+55: <%  }   %>
+56:
+</body>
+</html>

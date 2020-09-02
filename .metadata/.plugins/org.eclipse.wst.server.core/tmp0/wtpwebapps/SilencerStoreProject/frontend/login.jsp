@@ -43,7 +43,7 @@
 	
 		</c:if>
 
-		<form action="login" id="loginForm" method="post">
+		<form action="login_customer" id="loginForm" method="post">
 			
 		<!-- 	<br/>
 				<div class="g-recaptcha" data-sitekey="6Le81cAZAAAAAFWBTZZO6fvx0noa6ghCqq0cP60o"></div>

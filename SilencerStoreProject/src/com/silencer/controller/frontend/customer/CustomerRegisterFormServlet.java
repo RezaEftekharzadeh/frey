@@ -23,6 +23,7 @@ public class CustomerRegisterFormServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
+		
 		System.out.println("customer servlet page");
 		
 		String registerCustomer= "/frontend/register_form.jsp";

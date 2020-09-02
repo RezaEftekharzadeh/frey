@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,38 +19,41 @@
 		
 		<div class="card mb-3"  v-for="(silencer, index) in silencers"> 
 			<div class="card-body" >
-				<span class="float-right" style="cursor:pointer"
-					@click='deleteSilencerForm(index)'>
-					x
-				</span>
-			
-		
-						
+				<div align="right">
+					<span class="float-right" style="cursor:pointer"
+						@click='deleteSilencerForm(index)'>
+						x
+					</span>
+				</div>
+	
 				<h4 class="card-title">{{ index +1 }}</h4>
 				
 				<div class="silencer-form">
 				
-					<select name="tread" id="tread"  v-model="silencer.tread">
-						 <option value="volvo">Volvo</option>
-						 <option value="saab">Saab</option>
-						 <option value="mercedes">Mercedes</option>
-						 <option value="audi">Audi</option>
+					<select name="silencer">
+					
+						    <c:forEach var="silencer" items="${listSilencer}">
+						        <option value="${silencer.threadSize}">${silencer.threadSize}</option>
+						    </c:forEach>
+						    
 					</select>
+							
+					<select name="silencer">
 					
-					<select name="core" id="core" v-model="silencer.core" >
-						 <option value="volvo">Volvo</option>
-						 <option value="saab">Saab</option>
-						 <option value="mercedes">Mercedes</option>
-						 <option value="audi">Audi</option>
+					    <c:forEach var="silencer" items="${listSilencer}">
+					        <option value="${silencer.coreSize}">${silencer.coreSize}</option>
+					    </c:forEach>
+					    
 					</select>
-					
-					<input type="text" placeholder="total" size = "3" v-model="silencer.total">
-					
-					<input type="text" value=${index} name="index">
+							
+							<input type="text" placeholder="total" size = "3" v-model="silencer.total">
+							
+							<input type="text" name="index" value = "eric">
 
 				</div>
 			</div>
 		</div>
+		<input type="text" name="index" value = "${index }">
 		<input type="submit" value="finish" >
 </form>
 		<button class="btn btn-success mt-5 mb-5" 
@@ -62,7 +66,7 @@
 
 	
 	<script>
-	
+		
 		var app = new Vue({
 			el: '.container',
 			data: {
@@ -91,7 +95,6 @@
 	}) 
 	
 	</script>
-
 
 </body>
 </html>

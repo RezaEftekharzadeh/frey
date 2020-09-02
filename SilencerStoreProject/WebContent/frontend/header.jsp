@@ -14,15 +14,15 @@
   		
   		&nbsp;&nbsp;&nbsp;&nbsp;
   		<c:if test="${loggedInCustomer == null }">
-	  		<a href="login">Sign in</a> |
+	  		<a href="login_customer_form">Sign in</a> |
 	  		<a href="/SilencerStoreProject/admin/">Admin</a> |
 	  		<a href="register">Register</a> |
 	  		<a href="view_cart">Cart</a> 
   		</c:if>
   		
   		<c:if test="${loggedInCustomer != null }">
-	  		<a>Welcome, ${loggedInCustomer.fullName}</a> |
-	  		<a href=""></a> |
+	  		
+	  		<a href="view_profile">Welcome, ${loggedInCustomer.fullName}</a> |
 	  		<a href="view_cart">Cart</a> |
 	  		<a href="logout">Logout</a> 
   		</c:if>

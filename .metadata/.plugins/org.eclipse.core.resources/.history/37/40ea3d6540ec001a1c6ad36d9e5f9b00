@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<script src="js/form.js" type="text/javascript"></script>
+<link href="css/form.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+<div class="header">
+<h1></h1>
+</div>
+
+<div class="two">
+<button class="name" onclick="textBoxCreate()">Name</button>
+<button class="email" onclick="emailBoxCreate()">Email</button>
+</div>
+
+<div class="third">
+<form action="" id="mainform" method="get" name="mainform">
+<p id="myForm"></p><input type="submit" value="Submit">
+</form>
+</div>
+</div>
+
+
+<script type="text/javascript">
+var i = 1; // Global Variable for Name
+var j = 1; // Global Variable for E-mail
+var k = 1;
+var l = 1;
+/*
+=================
+Creating Text Box for name field in the Form.
+=================
+*/
+function textBoxCreate(){
+	var y = document.createElement("INPUT");
+	var t = document.createTextNode("Email");
+	y.appendChild(t);
+	y.setAttribute("Placeholder", "Tread Size" + j);
+	y.setAttribute("Name", "tread_" + j);
+	document.getElementById("myForm").appendChild(y);
+	j++;
+	
+	var y = document.createElement("INPUT");
+	y.setAttribute("type", "text");
+	y.setAttribute("Placeholder", "Core Size" + i);
+	y.setAttribute("Name", "core_" + i);
+	document.getElementById("myForm").appendChild(y);
+	i++;
+	
+	var y = document.createElement("INPUT");
+	y.setAttribute("type", "text");
+	y.setAttribute("Placeholder", "total" + k);
+	y.setAttribute("Name", "total" + k);
+	document.getElementById("myForm").appendChild(y);
+	k++;
+}
+/*
+=================
+Creating Text Box for email field in the Form.
+=================
+*/
+function emailBoxCreate(){
+var y = document.createElement("INPUT");
+var t = document.createTextNode("Email");
+y.appendChild(t);
+y.setAttribute("Placeholder", "Email_" + j);
+y.setAttribute("Name", "treadSize_" + j);
+document.getElementById("myForm").appendChild(y);
+j++;
+}
+</script>
+</body>
+</html>
+

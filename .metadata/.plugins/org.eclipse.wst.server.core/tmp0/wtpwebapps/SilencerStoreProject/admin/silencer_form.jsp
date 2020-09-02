@@ -116,6 +116,13 @@
 			
 			</table>
 			
+			  
+			<select name="silencer">
+			    <c:forEach var="silencer" items="${listSilencer}">
+			        <option value="">${silencer.threadSize}</option>
+			    </c:forEach>
+			</select>
+			
 		</div>
 		<jsp:include page="footer.jsp" />
 		 <script>

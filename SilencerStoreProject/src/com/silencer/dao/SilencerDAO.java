@@ -10,6 +10,8 @@ import com.silencer.entity.Users;
 
 
 public class SilencerDAO extends JpaDAO<Silencer> implements GenericDAO<Silencer> {
+	
+	
 
 	public SilencerDAO(EntityManager entityManager) {
 		super(entityManager);
@@ -44,6 +46,16 @@ public class SilencerDAO extends JpaDAO<Silencer> implements GenericDAO<Silencer
 	public List<Silencer> listAll() {
 		
 		return super.findWithNamedQuery("silencer.findAll");
+		
+	}
+	public List<Silencer> listTread() {
+		
+		return super.findWithNamedQuery("silencer.findAllTread");
+		
+	}
+	public List<Silencer> listCore() {
+		
+		return super.findWithNamedQuery("silencer.findAllCore");
 		
 	}
 	
