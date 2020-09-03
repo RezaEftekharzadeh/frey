@@ -37,6 +37,15 @@
 			
 		</div>
 		<br/>
+		
+		<c:if test="${message != null}">
+		
+			<div align="center">
+				<h3><i><p style="color:red;">${message}</p></i></h3>
+			</div>
+	
+		</c:if>
+		
 		<form action="add_to_cart" method="get">
 			
 			<select name="silencer">
@@ -64,13 +73,7 @@
 			<input type="submit" value="Add">
 		</form>
 		
-		<c:if test="${message != null}">
 		
-			<div align="center">
-				<h4><i><p style="color:red;">${message}</p></i></h4>
-			</div>
-	
-		</c:if>
 
 		<c:set var="cart" value="${sessionScope['cart']}" />
 		<c:set var="discount" value="${sessionScope['discount']}" />
@@ -83,7 +86,7 @@
 		    <h2>Your cart is empty</h2>
 		</c:if>
 		
-		 <p id="disprice"></p>
+		 
 		  <p id="test"></p>
 		<c:if test="${cartTotal > 0 }">
 		    <div>

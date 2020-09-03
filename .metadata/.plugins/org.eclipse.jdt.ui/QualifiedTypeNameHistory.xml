@@ -11,10 +11,12 @@
 <fullyQualifiedTypeName name="com.silencer.dao.UserDAO"/>
 <fullyQualifiedTypeName name="com.silencer.service.UserServices"/>
 <fullyQualifiedTypeName name="com.silencer.service.SilencerSevices"/>
-<fullyQualifiedTypeName name="com.silencer.dao.SilencerDAO"/>
 <fullyQualifiedTypeName name="com.silencer.entity.SilencerSize"/>
 <fullyQualifiedTypeName name="com.silencer.entity.SilencerCoreSize"/>
 <fullyQualifiedTypeName name="com.silencer.dao.SilencerCoreSizeDAO"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="com.silencer.service.CustomerServices"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.silencer.dao.SilencerDAO"/>
+<fullyQualifiedTypeName name="com.silencer.service.SilencerServices"/>
 </qualifiedTypeNameHistroy>

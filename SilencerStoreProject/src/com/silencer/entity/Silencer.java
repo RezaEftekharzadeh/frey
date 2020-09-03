@@ -18,11 +18,13 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "silencer", catalog = "freydevikdb")
 @NamedQueries({
-	@NamedQuery(name="silencer.findAll", query="SELECT s FROM Silencer s"),
-	@NamedQuery(name="silencer.findAllTread", query="SELECT DISTINCT s.threadSize FROM Silencer s"),
-	@NamedQuery(name="silencer.findAllCore", query="SELECT DISTINCT s.coreSize FROM Silencer s"),
+	@NamedQuery(name="silencer.findAll", query="SELECT s FROM Silencer s ORDER BY s.threadSize "),
+	@NamedQuery(name="silencer.findAllTread", query="SELECT DISTINCT s.threadSize FROM Silencer s ORDER BY s.threadSize"),
+	@NamedQuery(name="silencer.findAllCore", query="SELECT DISTINCT s.coreSize FROM Silencer s ORDER BY s.coreSize"),
 	@NamedQuery(name="silencer.findByThreadSize" , query="SELECT DISTINCT  s FROM Silencer s WHERE s.threadSize = :threadSize"),
+	@NamedQuery(name="silencer.findByCode" , query="SELECT s FROM Silencer s WHERE s.code = :code"),
 	@NamedQuery(name="silencer.findByCoreSize" , query="SELECT DISTINCT s FROM Silencer s WHERE s.coreSize = :coreSize"),
+	@NamedQuery(name="silencer.findMatchSilencer" , query="SELECT s FROM Silencer s WHERE s.threadSize = :threadSize AND s.coreSize = :coreSize"),
 	@NamedQuery(name="silencer.countAll", query="SELECT COUNT(*) FROM Silencer s")
 })
 public class Silencer implements java.io.Serializable {
@@ -33,22 +35,31 @@ public class Silencer implements java.io.Serializable {
 	private float price;
 	private byte[] image;
 	private String description;
+	private String code;
+	private String caliber;
+	private String name;
 	private Set<OrderDetail> orderDetails = new HashSet<OrderDetail>(0);
 
 	public Silencer() {
 	}
 
-	public Silencer(int silencerId, String threadSize, String coreSize, float price) {
+	public Silencer(int silencerId, String threadSize, String coreSize, float price, String code, String caliber, String name) {
 		this.silencerId = silencerId;
 		this.threadSize = threadSize;
 		this.coreSize = coreSize;
+		this.code=code;
+		this.caliber=caliber;
+		this.name= name;
 		this.price = price;
 	}
 	
-	public Silencer(String threadSize, String coreSize, float price) {
+	public Silencer(String threadSize, String coreSize, float price, String code, String caliber, String name) {
 		this.threadSize = threadSize;
 		this.coreSize = coreSize;
+		this.code = code;
+		this.caliber = caliber;
 		this.price=price;
+		this.name=name;
 	}
 
 	public Silencer(int silencerId, String threadSize, String coreSize, float price, byte[] image, String description,
@@ -80,6 +91,33 @@ public class Silencer implements java.io.Serializable {
 
 	public void setThreadSize(String threadSize) {
 		this.threadSize = threadSize;
+	}
+	
+	@Column(name = "name", nullable = true, length = 45)
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	@Column(name = "caliber", nullable = true, length = 45)
+	public String getCaliber() {
+		return this.caliber;
+	}
+
+	public void setCaliber(String caliber) {
+		this.caliber = caliber;
+	}
+	
+	@Column(name = "code", nullable = true, length = 45)
+	public String getcode() {
+		return this.code;
+	}
+
+	public void setcode(String code) {
+		this.code = code;
 	}
 
 	@Column(name = "core_size", nullable = false, length = 45)

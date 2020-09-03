@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.silencer.dao.SilencerDAO;
+import com.silencer.service.SilencerServices;
+
 
 @WebServlet("/add_to_cart")
 public class AddSilencerToCartServlet extends HttpServlet {
@@ -19,9 +22,16 @@ public class AddSilencerToCartServlet extends HttpServlet {
     }
 
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
 		String tread = request.getParameter("silencerTread");
-		System.out.println(tread);
+		String core = request.getParameter("silencerCore");
+		
+		
+		  SilencerServices silencerSrvice = new SilencerServices(request,response);
+		  silencerSrvice.listMatchTreadAndCore(tread, core);
+
 	}
 
 }

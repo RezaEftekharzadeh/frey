@@ -59,20 +59,51 @@ public class SilencerDAO extends JpaDAO<Silencer> implements GenericDAO<Silencer
 		
 	}
 	
-
-	public Silencer findByThreadSize(String threadSize) {
-		
-		
+	public boolean findByTreadAndCore(String treadSize , String coreSize) {
 		
 		  List<Silencer> listSilencer=
-		  super.findWithNamedQuery("silencer.findByThreadSize", "threadSize",
-		  threadSize);
+				  super.findWithNamedQuery("silencer.findMatchSilencer", "threadSize",
+						  treadSize , "coreSize" , coreSize);
+				  
+				  if(!listSilencer.isEmpty()) {
+					  
+					  return true;				  
+				  }
+				  return false;
+		
+	}
+	
+
+	public Silencer findByThreadSize(String threadSize) {
+
+		  List<Silencer> listSilencer=
+				  super.findWithNamedQuery("silencer.findByThreadSize", "threadSize", threadSize);
 		  
-		  if(!listSilencer.isEmpty()) { for(int i=0; i<listSilencer.size(); i++) {
+		  if(!listSilencer.isEmpty()) {
+			  
+			  for(int i=0; i<listSilencer.size(); i++) {
 		  
-		  System.out.println(listSilencer.get(i)); // return listSilencer.get(i);
+		 
 		  
 		  return listSilencer.get(1); }
+		  
+		  }
+		  
+		  return null;
+		 
+		}
+	
+	public Silencer findBycode(String code) {
+
+		  List<Silencer> listSilencer=
+				  super.findWithNamedQuery("silencer.findByCode", "code", code);
+		  
+		  		if(!listSilencer.isEmpty()) {
+			  
+		  			for(int i=0; i<listSilencer.size(); i++) {
+
+		  			return listSilencer.get(0);
+			  }
 		  
 		  }
 		  

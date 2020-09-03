@@ -1,0 +1,153 @@
+package com.silencer.entity;
+// Generated Jul 16, 2020 10:33:30 AM by Hibernate Tools 5.2.12.Final
+
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+
+@Entity
+@Table(name = "silencer", catalog = "freydevikdb")
+@NamedQueries({
+	@NamedQuery(name="silencer.findAll", query="SELECT s FROM Silencer s"),
+	@NamedQuery(name="silencer.findAllTread", query="SELECT DISTINCT s.threadSize FROM Silencer s ORDER BY s.threadSize"),
+	@NamedQuery(name="silencer.findAllCore", query="SELECT DISTINCT s.coreSize FROM Silencer s ORDER BY s.coreSize"),
+	@NamedQuery(name="silencer.findByThreadSize" , query="SELECT DISTINCT  s FROM Silencer s WHERE s.threadSize = :threadSize"),
+	@NamedQuery(name="silencer.findByCoreSize" , query="SELECT DISTINCT s FROM Silencer s WHERE s.coreSize = :coreSize"),
+	@NamedQuery(name="silencer.findMatchSilencer" , query="SELECT s FROM Silencer s WHERE s.threadSize = :threadSize AND s.coreSize = :coreSize"),
+	@NamedQuery(name="silencer.countAll", query="SELECT COUNT(*) FROM Silencer s")
+})
+public class Silencer implements java.io.Serializable {
+
+	private int silencerId;
+	private String threadSize;
+	private String coreSize;
+	private float price;
+	private byte[] image;
+	private String description;
+	private String code;
+	private String caliber;
+	private Set<OrderDetail> orderDetails = new HashSet<OrderDetail>(0);
+
+	public Silencer() {
+	}
+
+	public Silencer(int silencerId, String threadSize, String coreSize, float price) {
+		this.silencerId = silencerId;
+		this.threadSize = threadSize;
+		this.coreSize = coreSize;
+		this.price = price;
+	}
+	
+	public Silencer(String threadSize, String coreSize, float price, String code, String caliber) {
+		this.threadSize = threadSize;
+		this.coreSize = coreSize;
+		this.code = code;
+		this.caliber = caliber;
+		this.price=price;
+	}
+
+	public Silencer(int silencerId, String threadSize, String coreSize, float price, byte[] image, String description,
+			Set<OrderDetail> orderDetails) {
+		this.silencerId = silencerId;
+		this.threadSize = threadSize;
+		this.coreSize = coreSize;
+		this.price = price;
+		this.image = image;
+		this.description = description;
+		this.orderDetails = orderDetails;
+	}
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "silencer_id", unique = true, nullable = false)
+	public int getSilencerId() {
+		return this.silencerId;
+	}
+
+	public void setSilencerId(int silencerId) {
+		this.silencerId = silencerId;
+	}
+
+	@Column(name = "thread_size", nullable = false, length = 45)
+	public String getThreadSize() {
+		return this.threadSize;
+	}
+
+	public void setThreadSize(String threadSize) {
+		this.threadSize = threadSize;
+	}
+	
+	@Column(name = "caliber", nullable = false, length = 45)
+	public String getCaliber() {
+		return this.caliber;
+	}
+
+	public void setCaliber(String caliber) {
+		this.caliber = caliber;
+	}
+	
+	@Column(name = "code", nullable = false, length = 45)
+	public String getcode() {
+		return this.code;
+	}
+
+	public void setcode(String code) {
+		this.code = code;
+	}
+
+	@Column(name = "core_size", nullable = false, length = 45)
+	public String getCoreSize() {
+		return this.coreSize;
+	}
+
+	public void setCoreSize(String coreSize) {
+		this.coreSize = coreSize;
+	}
+
+	@Column(name = "price", nullable = false, precision = 12, scale = 0)
+	public float getPrice() {
+		return this.price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
+	}
+
+	@Column(name = "image")
+	public byte[] getImage() {
+		return this.image;
+	}
+
+	public void setImage(byte[] image) {
+		this.image = image;
+	}
+
+	@Column(name = "description", length = 16777215)
+	public String getDescription() {
+		return this.description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "silencer")
+	public Set<OrderDetail> getOrderDetails() {
+		return this.orderDetails;
+	}
+
+	public void setOrderDetails(Set<OrderDetail> orderDetails) {
+		this.orderDetails = orderDetails;
+	}
+
+}

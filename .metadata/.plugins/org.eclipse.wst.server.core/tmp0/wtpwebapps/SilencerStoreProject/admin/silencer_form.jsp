@@ -33,7 +33,27 @@
 	    </div>
 	        
 	    <div align="center">
-	    <h4><i><p style="color:green;">${message}</p></i></h4>
+	    <c:if test="${ message != null }">
+	    	<c:if test="${ message2 == 1 }">
+	    	
+			    <div align="center">
+			    	<h4><i><p style="color:green;">${message}</p></i></h4>
+			    	
+			    </div>
+	   		
+	   		</c:if>
+	    </c:if>
+	  
+	     <c:if test="${ message != null }">
+	    	<c:if test="${ message2 == 2 }">
+	    	
+			    <div align="center">
+			    	<h4><i><p style="color:red;">${message}</p></i></h4>
+			    	
+			    </div>
+	   		
+	   		</c:if>
+    </c:if>
 		    <c:if test = "${silencer != null}">
 		    
 			     	<form action="update_silencer" method="get" id="silencerForm">
@@ -49,15 +69,30 @@
 	    	
 	    	
 	    	<table >
+	    	
+	    			<tr>
+	    				<td align="right">Name:</td>
+	    				<td><input type="text" name="name" id="tread" size="45" value= ${silencer.name }>
+	    			</tr>
 	    		
 	    			<tr>
-	    				<td align="right">Tread Size:</td>
+	    				<td align="right">Model:</td>
 	    				<td><input type="text" name="tread" id="tread" size="45" value= ${silencer.threadSize }>
 	    			</tr>
 	    			
 	    			<tr>
 	    				<td align="right">Core Size:</td>
 	    				<td><input type="text" name="core" id="core" size="45"  value= ${silencer.coreSize }>
+	    			</tr>
+	    			
+	    			<tr>
+	    				<td align="right">Caliber:</td>
+	    				<td><input type="text" name="caliber" id="caliber" size="45"  value= ${silencer.caliber }>
+	    			</tr>
+	    			
+	    			<tr>
+	    				<td align="right">Code:</td>
+	    				<td><input type="text" name="code" id="code" size="45"  value= ${silencer.code }>
 	    			</tr>
 	    			
 	    			<tr>
@@ -95,8 +130,11 @@
 				<tr>
 					<th>index</th>
 					<th>ID</th>
-					<th>Tread Size</th>
+					<th>Name</th>
+					<th>Model</th>
 					<th>Core Size</th>
+					<th>Caliber</th>
+					<th>Code</th>
 					<th>Price</th>
 					<th>Action</th>
 				</tr>
@@ -104,8 +142,11 @@
 					<tr>
 						<td>${status.index+1}</td>
 						<td>${silencer.silencerId}</td>
+						<td>${silencer.name}</td>
 						<td>${silencer.threadSize}</td>
 						<td>${silencer.coreSize}</td>
+						<td>${silencer.caliber}</td>
+						<td>${silencer.code}</td>
 						<td>${silencer.price}</td>
 						<td>
 							<a href="edit_silencer?id=${silencer.silencerId}">Edit</a>
@@ -117,11 +158,7 @@
 			</table>
 			
 			  
-			<select name="silencer">
-			    <c:forEach var="silencer" items="${listSilencer}">
-			        <option value="">${silencer.threadSize}</option>
-			    </c:forEach>
-			</select>
+			
 			
 		</div>
 		<jsp:include page="footer.jsp" />
@@ -142,6 +179,8 @@
 					rules: {
 						tread: "required",
 						core: "required",
+						code: "required",
+						caliber: "required",
 						price: {
 							required: true,
 							number: true
@@ -152,7 +191,9 @@
 					messages: {
 																
 						tread: "Please enter Tread Size",
-						core: "Please enter Tread Size",
+						core: "Please enter Core Size",
+						code: "Please enter uniqe Code for silencer",
+						caliber: "Please enter Caliber",
 						price: {
 							required: "Please enter price",
 							number: "please enter valid price"
