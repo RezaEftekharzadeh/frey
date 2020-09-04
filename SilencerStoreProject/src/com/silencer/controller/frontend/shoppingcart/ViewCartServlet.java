@@ -62,11 +62,9 @@ public class ViewCartServlet extends HttpServlet {
 		
 		  SilencerServices silencerService= new SilencerServices(request, response);
 		  silencerService.pureListSilencer();
-		 
-		
 
-		
-		  String path = "frontend/shopping_cart.jsp"; RequestDispatcher dispatcher = request.getRequestDispatcher(path); 
+		  String path = "frontend/shopping_cart.jsp";
+		  RequestDispatcher dispatcher = request.getRequestDispatcher(path); 
 		  dispatcher.forward(request,response);
 		 
 		

@@ -28,6 +28,7 @@
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 	<jsp:directive.include file="header.jsp" />
+	<c:set var="silecerByCode" value="${silencerByCode}"></c:set>
 	
 	<div align="center">
 	
@@ -48,12 +49,12 @@
 		
 		<form action="add_to_cart" method="get">
 			
-			<select name="silencer">
-				    <c:forEach var="silencer" items="${listSilencer}">
-				        <option value="">${silencer.price}</option>
+			<select name="silencerName">
+				    <c:forEach var="silencerName" items="${listNameSilencer}">
+				        <option value="">${silencerName}</option>
 				    </c:forEach>
 			</select>
-		
+				
 		
 			<select name="silencerTread">
 				    <c:forEach var="silencerTread" items="${listTreadSilencer}">
@@ -67,13 +68,33 @@
 				    </c:forEach>
 			</select>
 			
+			<select name="silencerCaliber">
+				    <c:forEach var="silencerCaliber" items="${listCaliberSilencer}">
+				        <option value="">${silencerCaliber}</option>
+				    </c:forEach>
+			</select>
+			
 		
 			<input type="text" name="total" placeholder="Total"/>
-			<input type="text" name="idNum" placeholder="ID Number" size="20"/>
+			
 			<input type="submit" value="Add">
 		</form>
 		
+		<form action="find_by_code">
+			Search with code: <input type="text" id="code" name="code" placeholder="Enter the code of silencer "/>
+			<input type="submit" value="Search" />
+		</form>
 		
+		<table  style="width:50%">
+			<tr>
+			    	<td align="center">${silecerByCode.name}</td>
+			    	<td align="center">${silecerByCode.threadSize}</td>
+			    	<td align="center" >${silecerByCode.coreSize}</td>
+			    	<td align="center">${silecerByCode.caliber}</td>
+			    	<td align="center">${silecerByCode.price}</td>
+			    									
+			</tr>
+		</table>
 
 		<c:set var="cart" value="${sessionScope['cart']}" />
 		<c:set var="discount" value="${sessionScope['discount']}" />

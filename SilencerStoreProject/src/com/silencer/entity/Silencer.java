@@ -21,10 +21,13 @@ import javax.persistence.Table;
 	@NamedQuery(name="silencer.findAll", query="SELECT s FROM Silencer s ORDER BY s.threadSize "),
 	@NamedQuery(name="silencer.findAllTread", query="SELECT DISTINCT s.threadSize FROM Silencer s ORDER BY s.threadSize"),
 	@NamedQuery(name="silencer.findAllCore", query="SELECT DISTINCT s.coreSize FROM Silencer s ORDER BY s.coreSize"),
+	@NamedQuery(name="silencer.findAllName", query="SELECT DISTINCT s.name FROM Silencer s ORDER BY s.name"),
+	@NamedQuery(name="silencer.findAllCaliber", query="SELECT DISTINCT s.caliber FROM Silencer s ORDER BY s.caliber"),
 	@NamedQuery(name="silencer.findByThreadSize" , query="SELECT DISTINCT  s FROM Silencer s WHERE s.threadSize = :threadSize"),
 	@NamedQuery(name="silencer.findByCode" , query="SELECT s FROM Silencer s WHERE s.code = :code"),
 	@NamedQuery(name="silencer.findByCoreSize" , query="SELECT DISTINCT s FROM Silencer s WHERE s.coreSize = :coreSize"),
 	@NamedQuery(name="silencer.findMatchSilencer" , query="SELECT s FROM Silencer s WHERE s.threadSize = :threadSize AND s.coreSize = :coreSize"),
+	@NamedQuery(name="silencer.findAllByCode" , query="SELECT s.name,s.threadSize,s.coreSize,s.caliber,s.price  FROM Silencer s WHERE s.code = :code"),
 	@NamedQuery(name="silencer.countAll", query="SELECT COUNT(*) FROM Silencer s")
 })
 public class Silencer implements java.io.Serializable {

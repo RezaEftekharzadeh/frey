@@ -51,7 +51,7 @@ public class SilencerServices {
 		
 		
 		Silencer silencer= new Silencer(tread,core,price,code,caliber,name);
-		 Silencer checkSilencer = silencerDAO.findBycode(code);
+		 Silencer checkSilencer = silencerDAO.findByCode(code);
 		  
 		 if(checkSilencer != null ) {
 			 
@@ -104,10 +104,15 @@ public class SilencerServices {
 		
 		List<Silencer> listTreadSilencer = silencerDAO.listTread();
 		List<Silencer> listCoreSilencer = silencerDAO.listCore();
+		List<Silencer> listNameSilencer = silencerDAO.listName();
+		List<Silencer> listCaliberSilencer = silencerDAO.listCaliber();
 		
 						
 		request.setAttribute("listTreadSilencer", listTreadSilencer);	
 		request.setAttribute("listCoreSilencer", listCoreSilencer);	
+		request.setAttribute("listNameSilencer", listNameSilencer);	
+		request.setAttribute("listCaliberSilencer", listCaliberSilencer);	
+
 	}
 	
 	
@@ -119,14 +124,21 @@ public class SilencerServices {
 			  System.out.println("YES"); 
 		  }else {
 			  System.out.println("FALSE//this silencer does not exist!"); 
-			  request.setAttribute("message", "Silencer with Tread Size "+ tread +" and Core size "+ core +" does not exist. Please connect with support line for this Size");
+			  request.setAttribute("message", "Silencer with Tread Size "+ tread +" and Core size "+ core +" is not a standard size. Please connect with support line for this Size");
 			  }
 		  RequestDispatcher dispatcher = request.getRequestDispatcher("view_cart");
 		  dispatcher.forward(request, response);
 
 	}
 	
-	
+	public void searchWithCode(String code) throws ServletException, IOException {
+		
+		Silencer silencer = silencerDAO.findAllByCode(code);
+		request.setAttribute("silencerByCode", silencer);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("view_cart");
+		dispatcher.forward(request, response);
+	}
 	
 	public void deleteSilencer() throws ServletException, IOException {
 		
@@ -168,7 +180,7 @@ public class SilencerServices {
 
 		  
 			  Silencer silencer = new Silencer(silencerId, tread, core, price, code, caliber, name);
-			 Silencer checkSilencer = silencerDAO.findBycode(code);
+			 Silencer checkSilencer = silencerDAO.findByCode(code);
 			  
 			 if(checkSilencer != null && silencer.getSilencerId() != checkSilencer.getSilencerId()) {
 				 

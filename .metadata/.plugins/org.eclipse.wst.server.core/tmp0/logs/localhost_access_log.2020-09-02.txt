@@ -143,3 +143,9 @@
 10.58.94.203 - - [02/Sep/2020:16:39:37 +0200] "GET /HNAP1/ HTTP/1.1" 404 761
 10.58.92.104 - - [02/Sep/2020:16:49:29 +0200] "GET / HTTP/1.1" 404 751
 10.58.92.104 - - [02/Sep/2020:16:49:30 +0200] "GET /HNAP1/ HTTP/1.1" 404 761
+127.0.0.1 - - [02/Sep/2020:20:54:18 +0200] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [02/Sep/2020:20:55:08 +0200] "GET /SilencerStoreProject/ HTTP/1.1" 200 1164
+0:0:0:0:0:0:0:1 - - [02/Sep/2020:20:55:09 +0200] "GET /favicon.ico HTTP/1.1" 404 762
+0:0:0:0:0:0:0:1 - - [02/Sep/2020:20:55:28 +0200] "GET /SilencerStoreProject/login_customer_form HTTP/1.1" 200 2618
+0:0:0:0:0:0:0:1 - - [02/Sep/2020:20:55:42 +0200] "POST /SilencerStoreProject/login_customer HTTP/1.1" 200 1133
+0:0:0:0:0:0:0:1 - - [02/Sep/2020:20:55:45 +0200] "GET /SilencerStoreProject/view_cart HTTP/1.1" 200 3703
