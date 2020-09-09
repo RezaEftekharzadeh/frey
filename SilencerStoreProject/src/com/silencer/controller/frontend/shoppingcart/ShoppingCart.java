@@ -3,24 +3,39 @@ package com.silencer.controller.frontend.shoppingcart;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
+import com.silencer.dao.SilencerDAO;
 import com.silencer.entity.Silencer;
 
 public class ShoppingCart {
 	
 	Map<Silencer, Integer> cart = new HashMap<>();
+	Map<Integer, Integer> test = new HashMap<>();
 	
 	public void addItem(Silencer silencer, int quantity) {
 		
+		int id = silencer.getSilencerId();
+		
+		
 		if (cart.containsKey(silencer)) {
-			
-			Integer totalQuantity = cart.get(silencer) + quantity;
+		Integer totalQuantity = cart.get(silencer) + quantity;
 			cart.put(silencer, totalQuantity);
-			
+			test.put(id, totalQuantity);
 		}else {
 			cart.put(silencer, quantity);
+			test.put(id, quantity);
 		}
+		
+		 Set<Silencer> keys = cart.keySet();
+
+	        for (Silencer key : keys) {
+	            System.out.println("***********************************************************"+key +" "+silencer.getSilencerId());
+	        }
+	        
 	}
+	
+	
 	public void removeItem (Silencer silencer) {
 		cart.remove(silencer);
 	}

@@ -23,6 +23,8 @@ public class CustomerLogoutServlet extends HttpServlet {
 			throws ServletException, IOException {
 		
 		request.getSession().removeAttribute("loggedInCustomer");
+		request.getSession().removeAttribute("cart");
+		
 		
 		response.sendRedirect(request.getContextPath());
 		

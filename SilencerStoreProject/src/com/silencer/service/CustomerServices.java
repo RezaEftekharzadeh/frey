@@ -20,8 +20,6 @@ import com.silencer.entity.Users;
 
 public class CustomerServices {
 	private static int failOrOk;
-	private EntityManagerFactory entityManagerFactory;
-	private EntityManager entityManager;
 	private CustomerDAO customerDAO;
 	private HttpServletRequest request;
 	private HttpServletResponse response;
@@ -31,9 +29,8 @@ public class CustomerServices {
 		
 		this.request=request;
 		this.response=response;
-		entityManagerFactory = Persistence.createEntityManagerFactory("SilencerStoreProject");
-		entityManager = entityManagerFactory.createEntityManager();
-		customerDAO = new CustomerDAO(entityManager);
+		
+		customerDAO = new CustomerDAO();
 		
 	}
 

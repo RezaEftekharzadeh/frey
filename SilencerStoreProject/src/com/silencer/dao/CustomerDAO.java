@@ -11,8 +11,7 @@ import com.silencer.entity.Users;
 
 public class CustomerDAO extends JpaDAO<Customer> implements GenericDAO<Customer> {
 	
-	public CustomerDAO(EntityManager entityManager) {
-		super(entityManager);
+	public CustomerDAO() {
 		
 	}
 

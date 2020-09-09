@@ -1,0 +1,44 @@
+package com.silencer.controller.frontend.shoppingcart;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class ShoppingCartTestFinal {
+
+	@Test
+	public void testAddItem() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testRemoveItem() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetTotalQuantity() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetTotalAmount() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testClear() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetTotalItems() {
+		fail("Not yet implemented");
+	}
+
+	@Test
+	public void testGetItems() {
+		fail("Not yet implemented");
+	}
+
+}

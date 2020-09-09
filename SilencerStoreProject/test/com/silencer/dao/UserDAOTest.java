@@ -20,17 +20,14 @@ import com.silencer.entity.Users;
 
 public class UserDAOTest {
 	
-	private static EntityManagerFactory entityManagerFactory;
-	private static EntityManager entityManager;
-	private static UserDAO userDao;
+		private static UserDAO userDao;
 	
 	@BeforeClass
 	public static void setup() {
 		
-		 entityManagerFactory = Persistence.createEntityManagerFactory("SilencerStoreProject");
-		 entityManager=entityManagerFactory.createEntityManager();
 		
-		 userDao=new UserDAO(entityManager);
+		
+		 userDao=new UserDAO();
 	}
 	
 
@@ -140,8 +137,7 @@ public class UserDAOTest {
 	
 	@AfterClass
 	public static void tearDown() {
-		entityManager.close();
-		entityManagerFactory.close();
+	
 	}
 
 

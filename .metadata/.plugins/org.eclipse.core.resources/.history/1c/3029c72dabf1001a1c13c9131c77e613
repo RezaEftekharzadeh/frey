@@ -1,0 +1,17 @@
+package com.silencer.controller.frontend.shoppingcart;
+
+import org.junit.BeforeClass;
+
+import com.silencer.entity.Silencer;
+
+public class ShoppingCartTest {
+	private static ShoppingCart cart;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() {
+		cart = new ShoppingCart();
+		Silencer silencer= new Silencer(1);
+	}
+	
+
+}

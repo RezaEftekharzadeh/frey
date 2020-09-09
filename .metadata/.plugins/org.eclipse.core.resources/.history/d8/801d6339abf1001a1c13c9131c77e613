@@ -1,0 +1,28 @@
+package com.silencer.controller.frontend.shoppingcart;
+
+import java.util.Map;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import com.silencer.entity.Silencer;
+
+public class ShoppingCartTest {
+	private static ShoppingCart cart;
+	
+	@BeforeClass
+	public static void setUpBeforeClass() {
+		cart = new ShoppingCart();
+		Silencer silencer= new Silencer(1);
+		
+		cart.addItem(silencer, 2);
+	}
+	
+	@Test
+	public void testAddItem() {
+		Map<Silencer, Integer> items = cart.getItems();
+		int quantity = items.get(silencer);
+	}
+	
+
+}

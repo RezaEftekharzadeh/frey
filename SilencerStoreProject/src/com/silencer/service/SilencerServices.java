@@ -11,6 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.silencer.controller.frontend.shoppingcart.ShoppingCart;
 import com.silencer.dao.SilencerDAO;
 import com.silencer.dao.UserDAO;
 import com.silencer.entity.Silencer;
@@ -18,20 +19,17 @@ import com.silencer.entity.Users;
 
 public class SilencerServices {
 	private static int failOrOk;
-	private EntityManagerFactory entityManagerFactory;
-	private EntityManager entityManager;
 	private SilencerDAO silencerDAO;
 	private HttpServletRequest request;
 	private HttpServletResponse response;
+	//private Silencer silencerdb;
 	
 	
 	public SilencerServices(HttpServletRequest request, HttpServletResponse response) {
 		
 		this.request=request;
 		this.response=response;
-		entityManagerFactory = Persistence.createEntityManagerFactory("SilencerStoreProject");
-		entityManager = entityManagerFactory.createEntityManager();
-		silencerDAO = new SilencerDAO(entityManager);
+		silencerDAO = new SilencerDAO();
 		
 		
 		
@@ -116,18 +114,53 @@ public class SilencerServices {
 	}
 	
 	
-	public void listMatchTreadAndCore(String tread, String core) throws ServletException, IOException {
+	public void listMatchTreadAndCore() throws ServletException, IOException {
 		
-		boolean check = silencerDAO.findByTreadAndCore(tread,core);
+		String tread = request.getParameter("silencerTread");
+		String core = request.getParameter("silencerCore");
+		String name = request.getParameter("silencerName");
+		String caliber = request.getParameter("silencerCaliber");
+		int total = Integer.parseInt(request.getParameter("total"));
+		
+		Object cartObject = request.getSession().getAttribute("cart");
+		ShoppingCart shoppingCart = null;
+		
+		//boolean check = silencerDAO.findByTreadAndCore(tread,core);
+	
 
-		  if( check ) { 
-			  System.out.println("YES"); 
-		  }else {
-			  System.out.println("FALSE//this silencer does not exist!"); 
-			  request.setAttribute("message", "Silencer with Tread Size "+ tread +" and Core size "+ core +" is not a standard size. Please connect with support line for this Size");
-			  }
-		  RequestDispatcher dispatcher = request.getRequestDispatcher("view_cart");
-		  dispatcher.forward(request, response);
+		/*
+		 * if( check ) {
+		 * 
+		 * //int silencerId = silencer.getSilencerId(); Object cartObject =
+		 * request.getSession().getAttribute("cart");
+		 * 
+		 * if(cartObject !=null && cartObject instanceof ShoppingCart) { shoppingCart =
+		 * (ShoppingCart) cartObject; }else { shoppingCart = new ShoppingCart();
+		 * request.getSession().setAttribute("cart", shoppingCart); } }else {
+		 * System.out.println("FALSE//this silencer does not exist!");
+		 * request.setAttribute("message", "Silencer with Tread Size "+ tread
+		 * +" and Core size "+ core
+		 * +" is not a standard size. Please connect with support line for this Size");
+		 * }
+		 */
+		  
+		if(cartObject !=null && cartObject instanceof ShoppingCart) {
+	
+			//For finding that session is for same customer or not 
+			  shoppingCart = (ShoppingCart) cartObject;
+			  
+				  }else {
+					  shoppingCart = new ShoppingCart();
+					  request.getSession().setAttribute("cart", shoppingCart);
+					 
+			  } 
+			Silencer silencer = silencerDAO.findSilencer(tread,core,name,caliber);
+		
+			shoppingCart.addItem(silencer, total);
+		
+		  
+		  String redirectURL = request.getContextPath().concat("/view_cart");
+		  response.sendRedirect(redirectURL);
 
 	}
 	

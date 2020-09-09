@@ -1,0 +1,55 @@
+package com.silencer.controller.frontend.shoppingcart;
+
+import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.silencer.entity.Customer;
+import com.silencer.entity.Silencer;
+import com.silencer.service.SilencerServices;
+
+
+@WebServlet("/view_cart")
+public class ViewCartServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+   
+    public ViewCartServlet() {
+        super();
+
+    }
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		
+			
+		
+		Customer customer = (Customer) request.getSession().getAttribute("loggedInCustomer");
+
+		double discount = 0;
+
+		if(customer.getDiscount() !=null) {
+			discount = Integer.parseInt(customer.getDiscount());
+			request.getSession().setAttribute("discount", discount);
+			}
+			
+		
+		  SilencerServices silencerService= new SilencerServices(request, response);
+		  silencerService.pureListSilencer();
+		  
+			
+		  String path = "frontend/shopping_cart.jsp";
+		  RequestDispatcher dispatcher = request.getRequestDispatcher(path); 
+		  dispatcher.forward(request,response);
+		 
+		
+	
+	}
+
+}

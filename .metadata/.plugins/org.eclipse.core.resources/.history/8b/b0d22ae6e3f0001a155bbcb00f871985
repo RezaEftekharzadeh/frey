@@ -1,0 +1,121 @@
+package com.silencer.controller.frontend.shoppingcart;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
+import com.silencer.entity.Silencer;
+
+public class ShoppingCart {
+	
+	Map<Silencer, Integer> cart = new HashMap<>();
+	
+	public void addItem(Silencer silencer, int quantity) {
+		System.out.println(cart.get(silencer.getSilencerId()));
+		/*if (cart.containsKey(silencer)) {*/
+		if (cart.get(silencer) !=null) {
+			Integer totalQuantity = cart.get(silencer) + quantity;
+			cart.put(silencer, totalQuantity);
+			
+		}else {
+			cart.put(silencer, quantity);
+		}
+	}
+	public void removeItem (Silencer silencer) {
+		cart.remove(silencer);
+	}
+	
+	public int getTotalQuantity() {
+		int total= 0;
+		
+		Iterator<Silencer> iterator = cart.keySet().iterator();
+		
+		while (iterator.hasNext()) {
+			
+			Silencer silencer = iterator.next();
+			Integer quantity = cart.get(silencer);
+			total += quantity;
+		}
+		
+		return total;
+	}
+	
+	public double getTotalAmount() {
+		double total = 0.0f;
+		
+		Iterator<Silencer> iterator = cart.keySet().iterator();
+		
+		while (iterator.hasNext()) {
+			
+			Silencer silencer = iterator.next();
+			Integer quantity = cart.get(silencer);
+			
+			double subTotal = quantity *silencer.getPrice();
+			
+			total += subTotal;
+		}
+		return total;
+		
+	}
+	public void clear() {
+		cart.clear();
+	}
+	
+	public int getTotalItems() {
+		System.out.println("total Items call");
+		return cart.size();
+	}
+	
+	public Map<Silencer, Integer> getItems(){
+		return this.cart;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

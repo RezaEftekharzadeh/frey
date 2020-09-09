@@ -1,0 +1,91 @@
+package com.silencer.controller.frontend.shoppingcart;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.silencer.dao.SilencerDAO;
+import com.silencer.service.SilencerServices;
+
+
+@WebServlet("/add_to_cart")
+public class AddSilencerToCartServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+   
+    public AddSilencerToCartServlet() {
+        super();
+        
+    }
+
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		
+		/*
+		 * SilencerServices silencerSrvice = new SilencerServices(request,response);
+		 * silencerSrvice.listMatchTreadAndCore();
+		 */
+		
+		String tread = request.getParameter("silencerTread");
+		String core = request.getParameter("silencerCore");
+		String name = request.getParameter("silencerName");
+		String caliber = request.getParameter("silencerCaliber");
+		int total = Integer.parseInt(request.getParameter("total"));
+		
+		Object cartObject =request.getSession().getAttribute("cart");
+		ShoppingCart shoppingCart = null;
+		
+		//boolean check = silencerDAO.findByTreadAndCore(tread,core);
+		
+		
+		
+		
+		
+		
+		
+		/*
+		 * if( check ) {
+		 * 
+		 * //int silencerId = silencer.getSilencerId(); Object cartObject =
+		 * request.getSession().getAttribute("cart");
+		 * 
+		 * if(cartObject !=null && cartObject instanceof ShoppingCart) { shoppingCart =
+		 * (ShoppingCart) cartObject; }else { shoppingCart = new ShoppingCart();
+		 * request.getSession().setAttribute("cart", shoppingCart); } }else {
+		 * System.out.println("FALSE//this silencer does not exist!");
+		 * request.setAttribute("message", "Silencer with Tread Size "+ tread
+		 * +" and Core size "+ core
+		 * +" is not a standard size. Please connect with support line for this Size");
+		 * }
+		 */
+
+			 
+			  
+		if(cartObject !=null && cartObject instanceof ShoppingCart) {
+	
+			//we can find that session is for same customer or not 
+			  shoppingCart = (ShoppingCart) cartObject;
+			  
+				  }else {
+					  
+					  shoppingCart = new ShoppingCart();
+					  request.getSession().setAttribute("cart", shoppingCart);
+					  System.out.println("Cart Added to session inside silencer service"); 
+				 
+			  } 
+		
+		
+			  	shoppingCart.addItem(silencerDAO.findSilencer(tread,core,name,caliber), total);
+		
+		  
+		  String redirectURL = request.getContextPath().concat("/view_cart");
+		  response.sendRedirect(redirectURL);
+
+	}
+
+}

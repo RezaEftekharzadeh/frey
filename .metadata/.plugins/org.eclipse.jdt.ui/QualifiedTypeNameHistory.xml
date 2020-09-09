@@ -19,4 +19,5 @@
 <fullyQualifiedTypeName name="com.silencer.dao.SilencerDAO"/>
 <fullyQualifiedTypeName name="com.silencer.service.SilencerServices"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="com.silencer.controller.frontend.shoppingcart.ShoppingCart"/>
 </qualifiedTypeNameHistroy>

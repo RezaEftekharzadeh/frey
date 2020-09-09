@@ -28,7 +28,7 @@ public class SilencerDAOTest {
 		entityManagerFactory = Persistence.createEntityManagerFactory("SilencerStoreProject");
 		entityManager = entityManagerFactory.createEntityManager();
 
-		silencerDao = new SilencerDAO(entityManager);
+		silencerDao = new SilencerDAO();
 	}
 
 	@AfterClass

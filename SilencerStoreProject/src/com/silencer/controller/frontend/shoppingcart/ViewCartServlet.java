@@ -27,48 +27,26 @@ public class ViewCartServlet extends HttpServlet {
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
+
 		
-		Object cartObject = request.getSession().getAttribute("cart");
 		Customer customer = (Customer) request.getSession().getAttribute("loggedInCustomer");
-		double discount = Integer.parseInt(customer.getDiscount());
-		request.getSession().setAttribute("discount", discount);
-		
-		if(cartObject == null) {
-			ShoppingCart shoppingCart = new ShoppingCart();
-			request.getSession().setAttribute("cart", shoppingCart);
-		}else {
-			/*
-			 * for (Map.Entry<Silencer, Integer> entry: cart.entrySet()) {
-			 * 
-			 * }
-			 */
-		}
-		
-		Silencer silencer =new Silencer();
-		silencer.setThreadSize("feather weight 149");
-		silencer.setPrice(110);
-		
-		ShoppingCart shoppingCart = (ShoppingCart) request.getSession().getAttribute("cart");
-		shoppingCart.addItem(silencer, 5);
-		
-		for (Map.Entry<Silencer, Integer> entry: shoppingCart.cart.entrySet()) {
-			double price =entry.getKey().getPrice();
-			double percent = discount / 100;
-			double afterDiscount = price - (percent * price);
-			request.getSession().setAttribute("afterDiscount", afterDiscount);
-		
-		}
-		
+
+		double discount = 0;
+
+		if(customer.getDiscount() !=null) {
+			discount = Integer.parseInt(customer.getDiscount());
+			request.getSession().setAttribute("discount", discount);
+			}
+			
 		
 		  SilencerServices silencerService= new SilencerServices(request, response);
 		  silencerService.pureListSilencer();
-
+		  
+			
 		  String path = "frontend/shopping_cart.jsp";
 		  RequestDispatcher dispatcher = request.getRequestDispatcher(path); 
 		  dispatcher.forward(request,response);
-		 
-		
-	
+
 	}
 
 }

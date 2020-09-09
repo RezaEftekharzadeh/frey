@@ -23,15 +23,18 @@ import javax.persistence.Table;
 	@NamedQuery(name="silencer.findAllCore", query="SELECT DISTINCT s.coreSize FROM Silencer s ORDER BY s.coreSize"),
 	@NamedQuery(name="silencer.findAllName", query="SELECT DISTINCT s.name FROM Silencer s ORDER BY s.name"),
 	@NamedQuery(name="silencer.findAllCaliber", query="SELECT DISTINCT s.caliber FROM Silencer s ORDER BY s.caliber"),
+	@NamedQuery(name="silencer.findById", query="SELECT s FROM Silencer s WHERE s.silencerId = :silencerId"),
 	@NamedQuery(name="silencer.findByThreadSize" , query="SELECT DISTINCT  s FROM Silencer s WHERE s.threadSize = :threadSize"),
 	@NamedQuery(name="silencer.findByCode" , query="SELECT s FROM Silencer s WHERE s.code = :code"),
 	@NamedQuery(name="silencer.findByCoreSize" , query="SELECT DISTINCT s FROM Silencer s WHERE s.coreSize = :coreSize"),
 	@NamedQuery(name="silencer.findMatchSilencer" , query="SELECT s FROM Silencer s WHERE s.threadSize = :threadSize AND s.coreSize = :coreSize"),
+	@NamedQuery(name="silencer.findSilencer" , query="SELECT s FROM Silencer s WHERE s.threadSize = :threadSize AND s.coreSize = :coreSize AND s.name = :name AND s.caliber = :caliber"),
 	@NamedQuery(name="silencer.findAllByCode" , query="SELECT s.name,s.threadSize,s.coreSize,s.caliber,s.price  FROM Silencer s WHERE s.code = :code"),
 	@NamedQuery(name="silencer.countAll", query="SELECT COUNT(*) FROM Silencer s")
 })
 public class Silencer implements java.io.Serializable {
-
+	
+	private final String importantField=null;
 	private int silencerId;
 	private String threadSize;
 	private String coreSize;
@@ -44,7 +47,16 @@ public class Silencer implements java.io.Serializable {
 	private Set<OrderDetail> orderDetails = new HashSet<OrderDetail>(0);
 
 	public Silencer() {
+		
 	}
+	
+	
+
+	public Silencer(int silencerId) {
+		super();
+		this.silencerId = silencerId;
+	}
+
 
 	public Silencer(int silencerId, String threadSize, String coreSize, float price, String code, String caliber, String name) {
 		this.silencerId = silencerId;
@@ -75,6 +87,32 @@ public class Silencer implements java.io.Serializable {
 		this.description = description;
 		this.orderDetails = orderDetails;
 	}
+	
+	@Override
+	public int hashCode() {
+		 final int prime = 31;
+	        int result = 1;
+	        result = prime * result
+	                + ((importantField == null) ? 0 : importantField.hashCode());
+	        return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        final Silencer other = (Silencer) obj;
+        if (importantField == null) {
+            if (other.importantField != null)
+                return false;
+        } else if (!importantField.equals(other.importantField))
+            return false;
+        return true;
+    }
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

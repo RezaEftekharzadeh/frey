@@ -47,11 +47,11 @@
 	
 		</c:if>
 		
-		<form action="add_to_cart" method="get">
+		<form action="add_to_cart" method="get" id="orderForm">
 			
 			<select name="silencerName">
 				    <c:forEach var="silencerName" items="${listNameSilencer}">
-				        <option value="">${silencerName}</option>
+				        <option value="${silencerName}">${silencerName}</option>
 				    </c:forEach>
 			</select>
 				
@@ -70,7 +70,7 @@
 			
 			<select name="silencerCaliber">
 				    <c:forEach var="silencerCaliber" items="${listCaliberSilencer}">
-				        <option value="">${silencerCaliber}</option>
+				        <option value="${silencerCaliber}">${silencerCaliber}</option>
 				    </c:forEach>
 			</select>
 			
@@ -79,15 +79,16 @@
 			
 			<input type="submit" value="Add">
 		</form>
+		<br/><br/>
 		
 		<form action="find_by_code">
-			Search with code: <input type="text" id="code" name="code" placeholder="Enter the code of silencer "/>
+			Search with Silencer Code: <input type="text" id="code" name="code" placeholder="Enter the code of silencer "/>
 			<input type="submit" value="Search" />
 		</form>
-		
-		<table  style="width:50%">
+		<br/>
+		<table  style="width:50%" border="1" >
 			<tr>
-			    	<td align="center">${silecerByCode.name}</td>
+			    	<td align="center" bordercolor="green">${silecerByCode.name}</td>
 			    	<td align="center">${silecerByCode.threadSize}</td>
 			    	<td align="center" >${silecerByCode.coreSize}</td>
 			    	<td align="center">${silecerByCode.caliber}</td>
@@ -125,6 +126,7 @@
 			    				<a href=""><b>Clear Cart</b></a>
 			    			</th>
 		    			</tr>
+		    			
 		    			<c:forEach items="${cart.items}" var="item" varStatus="status">
 		    				<tr>
 		    					<td>${status.index +1 }</td>
@@ -148,19 +150,39 @@
 	
 <script type="text/javascript">
 
-	function percentage(num, per){
+	/* function percentage(num, per){
  
 	  return (num/100)*per;
 	}
 	
 	var x = percentage(10, 100);
-	document.getElementById("disprice").innerHTML = x;
+	document.getElementById("disprice").innerHTML = x; */
 	
+	 $(document).ready(function() {
+			$("#orderForm").validate({
+				rules: {
+					
+					total: {
+						required: true,
+						number: true
+					},
 
+				},
+				
+				messages: {
+															
+					total: {
+						required: "Please enter number of this order",
+						number: "please enter valid number"
+						
+					},
+											
+				}
+			});
+			
+			
+		});
 </script>
-
-
-
 
 </body>
 </html>
