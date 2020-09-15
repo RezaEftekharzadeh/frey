@@ -116,7 +116,11 @@
 		    		<table border="1">
 		    			<tr>
 			    			<th>No</th>
-			    			<th>Silencer</th>
+			    			<th>Name</th>
+			    			<th>Model</th>
+			    			<th>Core Size</th>
+			    			<th>Caliber</th>
+			    			<th>Code</th>
 			    			<th>Quantity</th>
 			    			<th>Price ($)</th>
 			    			<th>Your Discount</th>
@@ -130,12 +134,17 @@
 		    			<c:forEach items="${cart.items}" var="item" varStatus="status">
 		    				<tr>
 		    					<td>${status.index +1 }</td>
-		    					<td>${item.key.threadSize}</td>
-		    					<td align="center" >${item.value }</td>
-		    					<td>${item.key.price}</td>
-		    					<td align="center">${discount  } %</td>
-		    					<td>${(item.value * item.key.price)} </td>
-		    					<td>${afterDiscount * item.value}</td>
+		    					<td align="center" >${item.key.name}</td>
+		    					<td align="center" >${item.key.threadSize}</td>
+		    					<td align="center" >${item.key.coreSize}</td>
+		    					<td align="center" >${item.key.caliber}</td>
+		    					<td align="center" >${item.key.code}</td>
+		    					<td align="center" >${item.value}</td>
+								<td align="center" >${item.key.price}</td>
+		    					<td align="center">${discount} %</td>
+		    					<td align="center" >${(item.value * item.key.price)} </td>
+		    					<td align="center" >${afterDiscount * item.value}</td>
+		    					<td><a href="cart_remove?silencer_id=${item.key.silencerId }"><b>Remove</b></a></td>
 			    					
 								
 		    				</tr>

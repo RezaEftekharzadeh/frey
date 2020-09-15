@@ -2,6 +2,7 @@ package com.silencer.entity;
 // Generated Jul 16, 2020 10:33:30 AM by Hibernate Tools 5.2.12.Final
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,8 +35,8 @@ import javax.persistence.Table;
 })
 public class Silencer implements java.io.Serializable {
 	
-	private final String importantField=null;
-	private int silencerId;
+	private String importantField;
+	private Integer silencerId;
 	private String threadSize;
 	private String coreSize;
 	private float price;
@@ -49,16 +50,14 @@ public class Silencer implements java.io.Serializable {
 	public Silencer() {
 		
 	}
-	
-	
 
-	public Silencer(int silencerId) {
+	public Silencer(Integer silencerId) {
 		super();
 		this.silencerId = silencerId;
 	}
 
 
-	public Silencer(int silencerId, String threadSize, String coreSize, float price, String code, String caliber, String name) {
+	public Silencer(Integer silencerId, String threadSize, String coreSize, float price, String code, String caliber, String name) {
 		this.silencerId = silencerId;
 		this.threadSize = threadSize;
 		this.coreSize = coreSize;
@@ -77,7 +76,7 @@ public class Silencer implements java.io.Serializable {
 		this.name=name;
 	}
 
-	public Silencer(int silencerId, String threadSize, String coreSize, float price, byte[] image, String description,
+	public Silencer(Integer silencerId, String threadSize, String coreSize, float price, byte[] image, String description,
 			Set<OrderDetail> orderDetails) {
 		this.silencerId = silencerId;
 		this.threadSize = threadSize;
@@ -87,41 +86,32 @@ public class Silencer implements java.io.Serializable {
 		this.description = description;
 		this.orderDetails = orderDetails;
 	}
-	
-	@Override
-	public int hashCode() {
-		 final int prime = 31;
-	        int result = 1;
-	        result = prime * result
-	                + ((importantField == null) ? 0 : importantField.hashCode());
-	        return result;
-	}
-	
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        final Silencer other = (Silencer) obj;
-        if (importantField == null) {
-            if (other.importantField != null)
-                return false;
-        } else if (!importantField.equals(other.importantField))
-            return false;
-        return true;
-    }
+	   @Override
+	    public int hashCode() {
+	        return Objects.hashCode(silencerId);
+	    }
+	 
+	    @Override
+	    public boolean equals(Object obj) {
+	        if (this == obj)
+	            return true;
+	        if (obj == null)
+	            return false;
+	        if (getClass() != obj.getClass())
+	            return false;
+	        Silencer other = (Silencer) obj;
+	        return Objects.equals(silencerId, other.getSilencerId());
+	    }
 
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "silencer_id", unique = true, nullable = false)
-	public int getSilencerId() {
+	public Integer getSilencerId() {
 		return this.silencerId;
 	}
 
-	public void setSilencerId(int silencerId) {
+	public void setSilencerId(Integer silencerId) {
 		this.silencerId = silencerId;
 	}
 

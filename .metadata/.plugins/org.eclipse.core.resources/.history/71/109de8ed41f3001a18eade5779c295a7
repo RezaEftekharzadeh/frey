@@ -1,0 +1,198 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@ page import="net.tanesha.recaptcha.ReCaptcha"%>
+<%@ page import="net.tanesha.recaptcha.ReCaptchaFactory"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Shopping cart</title>
+	
+	<script 
+			src="https://code.jquery.com/jquery-3.3.1.min.js" 
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" 
+			crossorigin="anonymous">
+	</script>
+	
+	<script 
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" 
+			integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" 
+			crossorigin="anonymous">
+	</script>
+	
+</head>
+<body>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+	<jsp:directive.include file="header.jsp" />
+	<c:set var="silecerByCode" value="${silencerByCode}"></c:set>
+	
+	<div align="center">
+	
+		<div >
+			 
+			 <h3>Your cart</h3>
+			
+		</div>
+		<br/>
+		
+		<c:if test="${message != null}">
+		
+			<div align="center">
+				<h3><i><p style="color:red;">${message}</p></i></h3>
+			</div>
+	
+		</c:if>
+		
+		<form action="add_to_cart" method="get" id="orderForm">
+			
+			<select name="silencerName">
+				    <c:forEach var="silencerName" items="${listNameSilencer}">
+				        <option value="${silencerName}">${silencerName}</option>
+				    </c:forEach>
+			</select>
+				
+		
+			<select name="silencerTread">
+				    <c:forEach var="silencerTread" items="${listTreadSilencer}">
+				        <option value="${silencerTread}">${silencerTread}</option>
+				    </c:forEach>
+			</select>
+			
+			<select name="silencerCore">
+				    <c:forEach var="silencerCore" items="${listCoreSilencer}">
+				        <option value="${silencerCore}">${silencerCore}</option>
+				    </c:forEach>
+			</select>
+			
+			<select name="silencerCaliber">
+				    <c:forEach var="silencerCaliber" items="${listCaliberSilencer}">
+				        <option value="${silencerCaliber}">${silencerCaliber}</option>
+				    </c:forEach>
+			</select>
+			
+		
+			<input type="text" name="total" placeholder="Total"/>
+			
+			<input type="submit" value="Add">
+		</form>
+		<br/><br/>
+		
+		<form action="find_by_code">
+			Search with Silencer Code: <input type="text" id="code" name="code" placeholder="Enter the code of silencer "/>
+			<input type="submit" value="Search" />
+		</form>
+		<br/>
+		<table  style="width:50%" border="1" >
+			<tr>
+			    	<td align="center" bordercolor="green">${silecerByCode.name}</td>
+			    	<td align="center">${silecerByCode.threadSize}</td>
+			    	<td align="center" >${silecerByCode.coreSize}</td>
+			    	<td align="center">${silecerByCode.caliber}</td>
+			    	<td align="center">${silecerByCode.price}</td>
+			    									
+			</tr>
+		</table>
+
+		<c:set var="cart" value="${sessionScope['cart']}" />
+		<c:set var="discount" value="${sessionScope['discount']}" />
+		<c:set var="cartTotal" value="${cart.totalItems}" />
+		<c:set var="afterDiscount" value="${sessionScope['afterDiscount']}" ></c:set>
+		
+		
+		
+		<c:if test="${cartTotal == 0 }">
+		    <h2>Your cart is empty</h2>
+		</c:if>
+		
+		 
+		  <p id="test"></p>
+		<c:if test="${cartTotal > 0 }">
+		    <div>
+		    	<form>
+		    		<table border="1">
+		    			<tr>
+			    			<th>No</th>
+			    			<th>Name</th>
+			    			<th>Model</th>
+			    			<th>Core Size</th>
+			    			<th>Caliber</th>
+			    			<th>Code</th>
+			    			<th>Quantity</th>
+			    			<th>Price ($)</th>
+			    			<th>Your Discount</th>
+			    			<th>Subtotal ($)</th>
+			    			<th>After discount ($)</th>
+			    			<th>
+			    				<a href=""><b>Clear Cart</b></a>
+			    			</th>
+		    			</tr>
+		    			
+		    			<c:forEach items="${cart.items}" var="item" varStatus="status">
+		    				<tr>
+		    					<td>${status.index +1 }</td>
+		    					<td>${item.key.name}</td>
+		    					<td>${item.key.threadSize}</td>
+		    					<td>${item.key.coreSize}</td>
+		    					<td>${item.key.caliber}</td>
+		    					<td>${item.key.code}</td>
+		    					<td align="center" ><input type="text" value="${item.value }" size="5"></td>
+		    					<td align="center" >${item.value }</td>
+		    					<td>${item.key.price}</td>
+		    					<td align="center">${discount  } %</td>
+		    					<td>${(item.value * item.key.price)} </td>
+		    					<td>${afterDiscount * item.value}</td>
+		    					<td><a href=""><b>Remove</b></a></td>
+			    					
+								
+		    				</tr>
+		    			</c:forEach>
+		    		</table>
+		    	</form>
+		    </div>
+		</c:if>
+		
+	</div>
+	<jsp:directive.include file="footer.jsp" />
+	
+<script type="text/javascript">
+
+	/* function percentage(num, per){
+ 
+	  return (num/100)*per;
+	}
+	
+	var x = percentage(10, 100);
+	document.getElementById("disprice").innerHTML = x; */
+	
+	 $(document).ready(function() {
+			$("#orderForm").validate({
+				rules: {
+					
+					total: {
+						required: true,
+						number: true
+					},
+
+				},
+				
+				messages: {
+															
+					total: {
+						required: "Please enter number of this order",
+						number: "please enter valid number"
+						
+					},
+											
+				}
+			});
+			
+			
+		});
+</script>
+
+</body>
+</html>

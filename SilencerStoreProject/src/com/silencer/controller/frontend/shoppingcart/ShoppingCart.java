@@ -11,26 +11,23 @@ import com.silencer.entity.Silencer;
 public class ShoppingCart {
 	
 	Map<Silencer, Integer> cart = new HashMap<>();
-	Map<Integer, Integer> test = new HashMap<>();
+	
 	
 	public void addItem(Silencer silencer, int quantity) {
-		
-		int id = silencer.getSilencerId();
-		
-		
+
 		if (cart.containsKey(silencer)) {
 		Integer totalQuantity = cart.get(silencer) + quantity;
 			cart.put(silencer, totalQuantity);
-			test.put(id, totalQuantity);
+			
 		}else {
 			cart.put(silencer, quantity);
-			test.put(id, quantity);
+			
 		}
 		
 		 Set<Silencer> keys = cart.keySet();
 
 	        for (Silencer key : keys) {
-	            System.out.println("***********************************************************"+key +" "+silencer.getSilencerId());
+	            System.out.println("***********************************************************"+key);
 	        }
 	        
 	}

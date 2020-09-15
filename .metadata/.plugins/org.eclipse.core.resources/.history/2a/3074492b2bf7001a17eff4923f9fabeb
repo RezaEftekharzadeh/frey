@@ -1,0 +1,14 @@
+package com.silencer.dao;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class OrderDAOTest {
+
+	@Test
+	public void testCreateSilencerOrder() {
+		fail("Not yet implemented");
+	}
+
+}

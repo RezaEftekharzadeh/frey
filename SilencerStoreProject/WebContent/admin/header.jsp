@@ -17,6 +17,9 @@
 	    <a href="list_silencer">Suppressor</a> |
 		<a href="list_customers">Customers</a> |
 		<a href="reviews">Reviews</a> |
-		<a href="orders">Orders</a> 
+		<div>
+			<a href="list_order"><img src="">
+			Orders</a> 
+		</div>
 	</div>
 </div>

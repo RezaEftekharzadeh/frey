@@ -1,6 +1,8 @@
 package com.silencer.controller.frontend.shoppingcart;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -48,8 +50,14 @@ public class AddSilencerToCartServlet extends HttpServlet {
 			SilencerDAO silencerDAO = new SilencerDAO();
 			
 			Silencer silencer = silencerDAO.findSilencer(tread,core,name,caliber);
-
+			
+			if(silencer != null) {
 			shoppingCart.addItem(silencer, total);
+			}else {
+				request.setAttribute("massage", "This silencer isn't a standard size, please contact with help desk");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("view_cart");
+				 dispatcher.forward(request, response);
+			}
 
 			
 			String redirectURL = request.getContextPath().concat("/view_cart");

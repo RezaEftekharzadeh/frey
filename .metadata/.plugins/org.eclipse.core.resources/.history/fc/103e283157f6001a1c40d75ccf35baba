@@ -1,0 +1,5 @@
+package com.silencer.dao;
+
+public class OrderDAO {
+
+}

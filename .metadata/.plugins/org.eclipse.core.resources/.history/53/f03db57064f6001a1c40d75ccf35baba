@@ -1,0 +1,45 @@
+package com.silencer.dao;
+
+import java.util.List;
+
+import com.silencer.entity.SilencerOrder;
+
+public class OrderDAO extends JpaDAO<SilencerOrder> implements GenericDAO<SilencerOrder> {
+
+	@Override
+	public SilencerOrder create(SilencerOrder t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public SilencerOrder update(SilencerOrder t) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public SilencerOrder get(Object id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(Object id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<SilencerOrder> listAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public long count() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

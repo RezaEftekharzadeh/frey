@@ -15,9 +15,20 @@
 <fullyQualifiedTypeName name="com.silencer.entity.SilencerCoreSize"/>
 <fullyQualifiedTypeName name="com.silencer.dao.SilencerCoreSizeDAO"/>
 <fullyQualifiedTypeName name="com.silencer.service.CustomerServices"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.silencer.dao.SilencerDAO"/>
 <fullyQualifiedTypeName name="com.silencer.service.SilencerServices"/>
-<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 <fullyQualifiedTypeName name="com.silencer.controller.frontend.shoppingcart.ShoppingCart"/>
+<fullyQualifiedTypeName name="com.silencer.entity.Silencer"/>
+<fullyQualifiedTypeName name="java.util.Objects"/>
+<fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="javax.persistence.NamedQueries"/>
+<fullyQualifiedTypeName name="javax.persistence.NamedQuery"/>
+<fullyQualifiedTypeName name="com.silencer.dao.OrderDAO"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
+<fullyQualifiedTypeName name="com.silencer.service.OrderServices"/>
+<fullyQualifiedTypeName name="com.silencer.entity.SilencerOrder"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
 </qualifiedTypeNameHistroy>

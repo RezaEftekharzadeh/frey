@@ -79,8 +79,8 @@ public class CustomerServices {
 		  String message = "***Customer with email '"+ email + "' already exist***" ;
 		  failOrOk=2;
 		  
-		  request.setAttribute("messageFailed", message); RequestDispatcher dispatcher
-		  = request.getRequestDispatcher("customer_form.jsp");
+		  request.setAttribute("messageFailed", message);
+		  RequestDispatcher dispatcher = request.getRequestDispatcher("customer_form.jsp");
 		  dispatcher.forward(request, response);
 	  
 	  }else {

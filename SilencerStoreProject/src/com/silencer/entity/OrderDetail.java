@@ -18,25 +18,28 @@ import javax.persistence.Table;
 @Table(name = "order_detail", catalog = "freydevikdb")
 public class OrderDetail implements java.io.Serializable {
 
-	private OrderDetailId id;
+	private OrderDetailId id = new OrderDetailId();
 	private Silencer silencer;
 	private SilencerOrder silencerOrder;
+	private Integer quantity;
+	private Float subtotal;
 
 	public OrderDetail() {
 	}
 
-	public OrderDetail(OrderDetailId id, Silencer silencer, SilencerOrder silencerOrder) {
+	public OrderDetail(OrderDetailId id, Silencer silencer, SilencerOrder silencerOrder, Integer quantity, Float subtotal) {
 		this.id = id;
 		this.silencer = silencer;
 		this.silencerOrder = silencerOrder;
+		this.quantity = quantity;
+		this.subtotal = subtotal;
 	}
 
 	@EmbeddedId
 
 	@AttributeOverrides({ @AttributeOverride(name = "orderId", column = @Column(name = "order_id", nullable = false)),
-			@AttributeOverride(name = "silencerId", column = @Column(name = "silencer_id", nullable = false)),
-			@AttributeOverride(name = "quantity", column = @Column(name = "quantity")),
-			@AttributeOverride(name = "subtotal", column = @Column(name = "subtotal", precision = 12, scale = 0)) })
+			@AttributeOverride(name = "silencerId", column = @Column(name = "silencer_id", nullable = false))})
+
 	public OrderDetailId getId() {
 		return this.id;
 	}
@@ -44,8 +47,26 @@ public class OrderDetail implements java.io.Serializable {
 	public void setId(OrderDetailId id) {
 		this.id = id;
 	}
+	
+	@Column(name = "quantity")
+	public Integer getQuantity() {
+		return this.quantity;
+	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+
+	@Column(name = "subtotal", precision = 12, scale = 0)
+	public Float getSubtotal() {
+		return this.subtotal;
+	}
+
+	public void setSubtotal(Float subtotal) {
+		this.subtotal = subtotal;
+	}
+
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "silencer_id", nullable = false, insertable = false, updatable = false)
 	public Silencer getSilencer() {
 		return this.silencer;
@@ -53,6 +74,7 @@ public class OrderDetail implements java.io.Serializable {
 
 	public void setSilencer(Silencer silencer) {
 		this.silencer = silencer;
+		this.id.setSilencer(silencer);
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -63,6 +85,7 @@ public class OrderDetail implements java.io.Serializable {
 
 	public void setSilencerOrder(SilencerOrder silencerOrder) {
 		this.silencerOrder = silencerOrder;
+		this.id.setSilencerOrder(silencerOrder);
 	}
 
 }
