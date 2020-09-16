@@ -7799,3 +7799,105 @@
 2020-09-15 10:30:43,876 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
 2020-09-15 10:31:18,078 [Worker-62: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
 2020-09-15 10:31:18,087 [Worker-62: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-15 10:31:18,093 [Worker-62: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-15 10:31:18,096 [Worker-62: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 09:07:41,227 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-09-16 09:08:15,156 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:08:15,262 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 09:08:15,321 [Worker-1: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:08:15,324 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 09:09:54,551 [Worker-5: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:09:54,555 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 09:09:54,564 [Worker-5: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:09:54,567 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 09:12:40,353 [Worker-2: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:12:40,356 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 09:12:40,358 [Worker-2: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:12:40,361 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 09:22:15,767 [Worker-17: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:22:15,771 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 09:22:15,773 [Worker-17: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:22:15,778 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 09:23:27,098 [Worker-19: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:23:27,101 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 09:23:27,107 [Worker-19: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:23:27,110 [Worker-19: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 09:23:53,106 [Worker-14: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:23:53,108 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 09:23:53,111 [Worker-14: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:23:53,113 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 09:31:30,549 [Worker-18: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:31:30,553 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 09:31:30,556 [Worker-18: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:31:30,559 [Worker-18: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 09:31:50,648 [Worker-21: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:31:50,650 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 09:31:50,654 [Worker-21: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:31:50,656 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 09:34:33,584 [Worker-23: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:34:33,601 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 09:34:33,603 [Worker-23: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:34:33,605 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 09:39:36,419 [Worker-24: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:39:36,422 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 09:39:36,424 [Worker-24: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:39:36,427 [Worker-24: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 09:46:12,054 [Worker-26: Building Workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:46:12,057 [Worker-26: Building Workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 09:46:12,059 [Worker-26: Building Workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:46:12,062 [Worker-26: Building Workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 09:48:07,223 [Worker-30: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:48:07,227 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 09:48:07,233 [Worker-30: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:48:07,237 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 09:50:00,547 [Worker-31: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:50:00,549 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 09:50:00,552 [Worker-31: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 09:50:00,554 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 10:01:55,220 [Worker-29: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 10:01:55,223 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 10:01:55,228 [Worker-29: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 10:01:55,231 [Worker-29: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 10:04:47,013 [Worker-35: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 10:04:47,017 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 10:04:47,021 [Worker-35: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 10:04:47,024 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 10:05:45,514 [Worker-37: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 10:05:45,517 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 10:05:45,523 [Worker-37: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 10:05:45,525 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 10:07:23,220 [Worker-35: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 10:07:23,223 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 10:07:23,225 [Worker-35: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 10:07:23,228 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 10:08:18,069 [Worker-37: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 10:08:18,072 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 10:08:18,074 [Worker-37: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 10:08:18,083 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 10:09:46,188 [Worker-37: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 10:09:46,191 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 10:09:46,193 [Worker-37: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 10:09:46,196 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 11:18:47,066 [Worker-53: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 11:18:47,072 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 11:18:47,075 [Worker-53: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 11:18:47,078 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 11:20:15,031 [Worker-53: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 11:20:15,033 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 11:20:15,035 [Worker-53: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 11:20:15,037 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 11:22:38,751 [Worker-54: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 11:22:38,753 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 11:22:38,755 [Worker-54: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 11:22:38,757 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 11:23:27,938 [Worker-54: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 11:23:27,940 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 11:23:27,943 [Worker-54: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 11:23:27,946 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 11:23:48,491 [Worker-53: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 11:23:48,495 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 11:23:48,496 [Worker-53: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 11:23:48,498 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\test\resources
+2020-09-16 11:24:25,909 [Worker-51: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-09-16 11:24:25,911 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\SilencerStoreProject\SilencerStoreProject\src\main\resources
+2020-09-16 11:24:25,913 [Worker-51: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1256 actually) to copy filtered resources, i.e. build is platform dependent!

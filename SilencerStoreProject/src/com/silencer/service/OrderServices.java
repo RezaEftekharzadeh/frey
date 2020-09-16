@@ -34,7 +34,15 @@ public class OrderServices {
 		
 	}
 
-	public void viewOrderDetailForAdmin() {
+	public void viewOrderDetailForAdmin() throws ServletException, IOException {
+		int orderId = Integer.parseInt(request.getParameter("id"));
+		
+		SilencerOrder order= orderDAO.get(orderId);
+		request.setAttribute("order", order);
+		
+		String detailPage = "order_detail.jsp";
+		RequestDispatcher dispathcer = request.getRequestDispatcher(detailPage);
+		dispathcer.forward(request, response);
 		
 		
 	}

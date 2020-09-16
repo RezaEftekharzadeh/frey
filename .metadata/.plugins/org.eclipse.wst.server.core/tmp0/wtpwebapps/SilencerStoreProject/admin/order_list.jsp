@@ -8,17 +8,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div>
+<jsp:include page="header.jsp" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<div align = "center">
 		<table border="1">
 		    			<tr>
 			    			<th>No</th>
 			    			<th>Order ID</th>
 			    			<th>Order by</th>
 			    			<th>Quantity</th>
-			    			<th>Caliber</th>
-			    			<th>Code</th>
-			    			<th>Quantity</th>
-			    			<th>Order Date</th>
+			    		 	<th>Order Date</th>
 			    			<th>Action</th>
 			    			
 			    			
@@ -30,8 +29,7 @@
 		    					<td align="center" >${order.orderId}</td>
 		    					<td align="center" >${order.customer.fullName}</td>
 		    					<td align="center" >${order.orderId}</td>
-		    					<td align="center" >${order.orderId}</td>
-		    					<td align="center" >${order.orderId}</td>
+		    					<td align="center" >${order.orderDate}</td>
 		    					<td align="center" >
 		    						<a href="view_order?id=${order.orderId}">Details</a>&nbsp;
 		    						<a href="edit?id=">Edit</a>&nbsp;
@@ -47,5 +45,6 @@
 	
 	
 	</div>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>
