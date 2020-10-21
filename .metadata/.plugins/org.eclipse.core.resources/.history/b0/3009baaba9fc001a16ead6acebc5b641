@@ -1,0 +1,166 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@ page import="net.tanesha.recaptcha.ReCaptcha"%>
+<%@ page import="net.tanesha.recaptcha.ReCaptchaFactory"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Checkout</title>
+	
+	<script 
+			src="https://code.jquery.com/jquery-3.3.1.min.js" 
+			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" 
+			crossorigin="anonymous">
+	</script>
+	
+	<script 
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" 
+			integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" 
+			crossorigin="anonymous">
+	</script>
+	
+</head>
+<body>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+	<jsp:directive.include file="header.jsp" />
+	<c:set var="silecerByCode" value="${silencerByCode}"></c:set>
+	
+	<div align="center">
+		
+		<c:if test="${message != null}">
+		
+			<div align="center">
+				<h3><i><p style="color:red;">${message}</p></i></h3>
+			</div>
+	
+		</c:if>
+		
+		<c:set var="cart" value="${sessionScope['cart']}" />
+		<c:set var="discount" value="${sessionScope['discount']}" />
+		<c:set var="cartTotal" value="${cart.totalItems}" />
+		<c:set var="afterDiscount" value="${sessionScope['afterDiscount']}" ></c:set>
+		
+		
+		
+		<c:if test="${cartTotal == 0 }">
+		    <h2>Your cart is empty</h2>
+		</c:if>
+		
+		 
+		  <p id="test"></p>
+		<c:if test="${cartTotal > 0 }">
+		    <div>
+		    	<h2>Your Order <a href="view_cart">Edit</a></h2>
+		    		<table border="1">
+		    			<tr>
+			    			<th>No</th>
+			    			<th>Name</th>
+			    			<th>Model</th>
+			    			<th>Core Size</th>
+			    			<th>Caliber</th>
+			    			<th>Code</th>
+			    			<th>Quantity</th>
+			    			<th>Price ($)</th>
+			    			<th>Your Discount</th>
+			    			<th>Subtotal ($)</th>
+			    			<th>After discount ($)</th>
+			    			
+		    			</tr>
+		    			
+		    			<c:forEach items="${cart.items}" var="item" varStatus="status">
+		    				<tr>
+		    					<td>${status.index +1 }</td>
+		    					<td align="center" >${item.key.name}</td>
+		    					<td align="center" >${item.key.threadSize}</td>
+		    					<td align="center" >${item.key.coreSize}</td>
+		    					<td align="center" >${item.key.caliber}</td>
+		    					<td align="center" >${item.key.code}</td>
+		    					<td align="center" >${item.value}</td>
+								<td align="center" >${item.key.price}</td>
+		    					<td align="center">${discount} %</td>
+		    					<td align="center" >${(item.value * item.key.price)} </td>
+		    					<td align="center" >${afterDiscount * item.value}</td>
+		    					
+		    				</tr>
+		    			</c:forEach>
+		    		</table>
+		  			<h2>Your shipping Information</h2>
+		  			<form id="informationForm" action="place_order" method="post">
+		  				<table>
+		  					<tr>
+		  						<td>Name:</td>
+		  						<td><input type="text" name="recipientName" value="${loggedInCustomer.fullName}" /></td>
+		  					</tr>
+		  					<tr>
+		  						<td>Phone:</td>
+		  						<td><input type="text" name="recipientPhone" value="${loggedInCustomer.phone}" /></td>
+		  					</tr>
+		  					<tr>
+		  						<td>Address:</td>
+		  						<td><input type="text" name="adress" value="${loggedInCustomer.address}" /></td>
+		  					</tr>
+		  					<tr>
+		  						<td>City:</td>
+		  						<td><input type="text" name="city" value="${loggedInCustomer.city}" /></td>
+		  					</tr>
+		  					<tr>
+		  						<td>Zip Code:</td>
+		  						<td><input type="text" name="zipCode" value="${loggedInCustomer.zipcode}" /></td>
+		  					</tr>
+		  					<tr>
+		  						<td>Country:</td>
+		  						<td><input type="text" name="country" value="${loggedInCustomer.country}" /></td>
+		  					</tr>
+
+		  				</table>
+		  			
+		  				<input type="submit" value="submit" />
+		  			
+		  			</form>
+		    </div>
+		</c:if>
+		
+	</div>
+	<jsp:directive.include file="footer.jsp" />
+	
+<script type="text/javascript">
+
+	 $(document).ready(function() {
+			$("#informationForm").validate({
+				rules: {
+					recipientName: "require",
+					recipientPhone: {
+						required: true,
+						number: true
+					},
+					adress: "require",
+					city: "require",
+					country: "require",
+				
+				},
+				
+				messages: {
+					recipientName: "Please enter your name"	,
+					recipientPhone: {
+						required: "Please phone number",
+						number: "Please enter number"
+						
+					},
+					adress: "Please enter your adress"	,
+					city: "Please enter your city"	,
+					country: "Please enter your name"	,
+															
+				}
+			});
+			
+			
+		});
+</script>
+
+</body>
+</html>

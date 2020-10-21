@@ -36,7 +36,7 @@ public class SilencerOrder implements java.io.Serializable {
 	private Date orderDate;
 	private String shippingAddress;
 	private String ricipientName;
-	private String ricipientForm;
+	private String ricipientPhone;
 	private String paymentMethod;
 	private float total;
 	private String status;
@@ -53,13 +53,13 @@ public class SilencerOrder implements java.io.Serializable {
 	}
 
 	public SilencerOrder(int orderId, Customer customer, Date orderDate, String shippingAddress, String ricipientName,
-			String ricipientForm, String paymentMethod, float total, String status, Set<OrderDetail> orderDetails) {
+			String ricipientPhone, String paymentMethod, float total, String status, Set<OrderDetail> orderDetails) {
 		this.orderId = orderId;
 		this.customer = customer;
 		this.orderDate = orderDate;
 		this.shippingAddress = shippingAddress;
 		this.ricipientName = ricipientName;
-		this.ricipientForm = ricipientForm;
+		this.ricipientPhone = ricipientPhone;
 		this.paymentMethod = paymentMethod;
 		this.total = total;
 		this.status = status;
@@ -115,13 +115,13 @@ public class SilencerOrder implements java.io.Serializable {
 		this.ricipientName = ricipientName;
 	}
 
-	@Column(name = "ricipient_form", length = 15)
-	public String getRicipientForm() {
-		return this.ricipientForm;
+	@Column(name = "ricipient_phone", length = 15)
+	public String getRicipientPhone() {
+		return this.ricipientPhone;
 	}
 
-	public void setRicipientForm(String ricipientForm) {
-		this.ricipientForm = ricipientForm;
+	public void setRicipientPhone(String ricipientPhone) {
+		this.ricipientPhone = ricipientPhone;
 	}
 
 	@Column(name = "payment_method", length = 20)

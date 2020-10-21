@@ -13,12 +13,12 @@
 	
 		<h3><p style= "color: green">${message}</p></h3>
 		
-		<form action="" method="get">
+		<!-- <form action="login_customer_form" method="get">
 		
 			 <input type="submit" value="Sign In in your profile">
 		
 		</form>
-	
+	 -->
 	
 	</div>
 

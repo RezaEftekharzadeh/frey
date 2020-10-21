@@ -124,7 +124,7 @@ public class CustomerServices {
 				  Customer customer= new Customer(email,fullName,address,city,country,phone,zipCode,password);
 				  customerDAO.create(customer);
 				  
-				  String message = "User created successfully";
+				  String message = "Customer created successfully";
 				  request.setAttribute("message", message);
 				  
 				  RequestDispatcher dispatcher = request.getRequestDispatcher("/frontend/message.jsp");
@@ -148,7 +148,7 @@ public class CustomerServices {
 		  
 		  }else {
 			  
-			  listCustomer("***User with Id '"+ customerID +"' does not exist***", 2); 
+			  listCustomer("***Customer with Id '"+ customerID +"' does not exist***", 2); 
 			  
 			  }
 		  

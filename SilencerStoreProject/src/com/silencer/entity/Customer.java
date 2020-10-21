@@ -121,7 +121,7 @@ public class Customer implements java.io.Serializable {
 		this.customerId = customerId;
 	}
 
-	@Column(name = "email", nullable = false, length = 64)
+	@Column(name = "email", nullable = true, length = 64)
 	public String getEmail() {
 		return this.email;
 	}
@@ -130,7 +130,7 @@ public class Customer implements java.io.Serializable {
 		this.email = email;
 	}
 
-	@Column(name = "full_name", nullable = false, length = 45)
+	@Column(name = "full_name", nullable = true, length = 45)
 	public String getFullName() {
 		return this.fullName;
 	}
@@ -139,7 +139,7 @@ public class Customer implements java.io.Serializable {
 		this.fullName = fullName;
 	}
 
-	@Column(name = "address", nullable = false, length = 128)
+	@Column(name = "address", nullable = true, length = 128)
 	public String getAddress() {
 		return this.address;
 	}
@@ -148,7 +148,7 @@ public class Customer implements java.io.Serializable {
 		this.address = address;
 	}
 
-	@Column(name = "city", nullable = false, length = 32)
+	@Column(name = "city", nullable = true, length = 32)
 	public String getCity() {
 		return this.city;
 	}
@@ -157,7 +157,7 @@ public class Customer implements java.io.Serializable {
 		this.city = city;
 	}
 
-	@Column(name = "country", nullable = false, length = 64)
+	@Column(name = "country", nullable = true, length = 64)
 	public String getCountry() {
 		return this.country;
 	}
@@ -166,7 +166,7 @@ public class Customer implements java.io.Serializable {
 		this.country = country;
 	}
 
-	@Column(name = "phone", nullable = false, length = 15)
+	@Column(name = "phone", nullable = true, length = 15)
 	public String getPhone() {
 		return this.phone;
 	}
@@ -175,7 +175,7 @@ public class Customer implements java.io.Serializable {
 		this.phone = phone;
 	}
 
-	@Column(name = "zipcode", nullable = false, length = 15)
+	@Column(name = "zipcode", nullable = true, length = 15)
 	public String getZipcode() {
 		return this.zipcode;
 	}
@@ -184,7 +184,7 @@ public class Customer implements java.io.Serializable {
 		this.zipcode = zipcode;
 	}
 
-	@Column(name = "password", nullable = false, length = 20)
+	@Column(name = "password", nullable = true, length = 20)
 	public String getPassword() {
 		return this.password;
 	}

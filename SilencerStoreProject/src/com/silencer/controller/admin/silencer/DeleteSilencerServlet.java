@@ -17,7 +17,7 @@ public class DeleteSilencerServlet extends HttpServlet {
    
     public DeleteSilencerServlet() {
         super();
-        // TODO Auto-generated constructor stub
+      
     }
 
 	

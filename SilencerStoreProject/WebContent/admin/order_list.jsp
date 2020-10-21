@@ -28,7 +28,7 @@
 		    					<td>${status.index +3 }</td>
 		    					<td align="center" >${order.orderId}</td>
 		    					<td align="center" >${order.customer.fullName}</td>
-		    					<td align="center" >${order.orderId}</td>
+		    					<td align="center" >${order.totalSilencer}</td>
 		    					<td align="center" >${order.orderDate}</td>
 		    					<td align="center" >
 		    						<a href="view_order?id=${order.orderId}">Details</a>&nbsp;

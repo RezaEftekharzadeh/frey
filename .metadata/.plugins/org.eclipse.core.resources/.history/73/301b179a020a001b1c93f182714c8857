@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Silencer-Freyr&Devik</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Freyr And Devik</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#signup">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="register">Sign up</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="login_customer_form">Log in</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">Freyr & Devik</h1>
+                    <h2 class="text-white-51 mx-auto mt-2 mb-5">Nordic Silence</h2>
+                    <a class="btn btn-primary js-scroll-trigger" href="#about">Get Started</a>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="about-section text-center" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-white mb-4">
+                          IT'S ALL ABOUT PASSION FOR NATURE
+                        </h2>
+                        <p class="text-white-50" align="left">
+
+                            Freyr and Devik is the result of a lifelong passion for hunting, wilderness and nature.
+
+                         <br/><br/>
+
+                            Our suppressors are tailor made for hunting -  designed and inspired by experienced hunters.
+                            That's why we specialize in the design of user friendly and lightweight suppressors with high suppression rate, that retain the balance of the hunting rifle. 
+
+                         <br/><br/>
+
+                            Our opinion is that a good sound suppressor is vital for a good hunting and nature experience - both for the hunter and the surroundings
+                            Our suppressors can be distinguished by the streamlined Freyr & Devik encapsulation that creates a natural affiliation with the aesthetic of a classic hunting rifle. As the only suppressor ever, the Freyr & Devik design is awarded with the esteemed Red Dot award. The unique construction balance the suppressor and allows it to glide better through dense vegetation than a pure cylindrical shape.
+
+                        <br/><br/>
+                          In addition to the aesthetic and user friendly qualities the design is highly effective when it comes to weight and robustness. The tapering shape with curved surfaces is a structure in which the strength is optimized.  A key quality when it comes to constructing extremely light but robust suppressors.
+                        <br/><br/>
+                          Another unique feature of our suppressors is that they can be opened easily without tools. Not only does this make them easy to maintain and clean, but also allows for other unique benefits. Like fast cooldown between series at the shooting range. Fast drying after shooting or after hunting in rainy weather. This way you can store the suppressor on the rifle and still avoid corrosion.
+                        <br/><br/>
+                          Material is also of vital importance therefore we use 5 grade Titanium on the core and threads in all our suppressors.
+
+                        </p>
+                    </div>
+                </div>
+                <img class="img-fluid-l149" src="assets/img/Product149.png" alt="" />
+
+
+
+            </div>
+        </section>
+        <!-- Projects-->
+        <section class="projects-section bg-light" id="projects">
+            <div class="container">
+                <!-- Featured Project Row-->
+                <div class="row align-items-center no-gutters mb-4 mb-lg-5">
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/usfws.jpg" alt="" /></div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4 class="bold-text-justify">We specialize the design of user friendly and lightweight suppressors with high suppression rate that retain the balance of the hunting rifle.</h4>
+                            <p class="text-black-50 mb-0">
+                              Our range off suppressors are designed to cover the different need of the hunter. Featherweight 269 is for those who wants maximum suppression. Freyr 280 Titanium is our magnum suppressor while Featherweight 196 is ideal for driven hunt. The Featherweight 149 is ideal for driven hunts, stalking and when handling dogs. This suppressor is ideal for smaller calibers.
+​                             </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project One Row-->
+                <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                    <div align="center" class="col-lg-6"><img class="img-fluid-l" src="assets/img/product.png" alt="" /></div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">Featherweight 269</h4>
+                                        <p class="mb-0 text-white-50">Is the silencer for those who need maximum suppression.
+                                           Even though it has a very high rate of suppression it only weighs a remarkable 269 grams.
+                                            This light weight makes for excellent handleability and retains the natural balance of the rifle.
+                                        </p></br>
+
+                                        <p class="detail-l"><b>SPECIFICATION</b></p>
+                                        <p class="mb-0 text-white-50">
+                                              Suppression: 32-38 dB
+                                              Weight: Approx. 269g
+                                              Core: Titanium
+                                              Length in front of muzzle: 145 mm
+                                              Total Length: 224 mm
+                                              Diameter: 49.5 mm
+                                        </p></br>
+                                        <p class="detail-l"><b>THREADS</b></p><p class="mb-0 text-white-50"> ½”28, ½”20, M13x1, 14x1, M15x1, 5/8”24, M17x1, M18x1</p></br>
+                                        <p class="detail-l"><b>CALIBERS</b></p><p class="mb-0 text-white-50"> Standard calibers.  .22/6.5mm/.30/9.5mm   </p>
+
+
+                                    <hr class="d-none d-lg-block mb-0 ml-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Two Row-->
+                <!-- Project One Row-->
+
+                <div class="row justify-content-center no-gutters">
+                    <div align="center" class="col-lg-6"><img class="img-fluid-l" src="assets/img/product280.png" alt="" /></div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div  class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">Featherweight 280</h4>
+                                    <p aling="left" class="mb-0 text-white-50">Freyr 280 Titanium is our magnum suppressor.
+                                      This is an effective very lightweight, balanced and robust silencer -
+                                       especially designed for hunting and longevity. In 2017 the Freyr 280 Titanium silencer received the prestigious RED DOT design award.
+                                    </p></br>
+
+                                    <p class="detail-l"><b>SPECIFICATION</b></p>
+                                    <p class="mb-0 text-white-50">
+                                      Suppression: 28+ dB
+                                      Weight: Approx. 280 g
+                                      Core: Titanium
+                                      Length in front of muzzle: 125 mm
+                                      Total Length: 213 mm
+                                      Diameter: 49.5 mm
+                                    </p></br>
+                                    <p class="detail-l"><b>THREADS</b></p><p class="mb-0 text-white-50">½”28, ½”20, M13x1, 14x1, M15x1, 5/8”24, M17x1, M18x1 </p></br>
+                                    <p class="detail-l"><b>CALIBERS</b></p><p class="mb-0 text-white-50">Standard and magnum calibers. .22/6.5mm/.30/9.5mm</p>
+                                    <hr class="d-none d-lg-block mb-0 mr-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
+                <div align="center" class="col-lg-6"><img class="img-fluid-l" src="assets/img/product196.png" alt="" /></div>
+                <div class="col-lg-6">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                              <h4 class="text-white">Featherweight 196</h4>
+                              <p aling="left" class="mb-0 text-white-50">Featherweight 196 is the silencer for those who are looking for the optimum hunting suppressor.
+                                 Weighing in at 196 grams it offers the suppression level of a full-size suppressor in a small and remarkably light package.
+                                  At this weight it has hardly any effect on the natural balance of the rifle.
+                                 This makes it ideal for driven hunts, stalking and when handling dogs.
+                              </p></br>
+
+                              <p class="detail-l"><b>SPECIFICATION</b></p>
+                              <p class="mb-0 text-white-50">
+                                Suppression: 29-31 dB
+                                Weight: Approx. 196g
+                                Core: Titanium
+                                Length in front of muzzle: 109 mm
+                                Total Length: 154 mm
+                                Diameter: 49.5 mm
+                              </p></br>
+                              <p class="detail-l"><b>THREADS</b></p><p class="mb-0 text-white-50">½”28, ½”20, M13x1, 14x1, M15x1, 5/8”24, M17x1, M18x1  </p></br>
+                              <p class="detail-l"><b>CALIBERS</b></p><p class="mb-0 text-white-50">Standard calibers.  .22/6.5mm/.30</p>
+                                <hr class="d-none d-lg-block mb-0 ml-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center no-gutters">
+                <div align="center" class="col-lg-6"><img class="img-fluid-l149" src="assets/img/product149.png" alt="" /></div>
+                <div class="col-lg-6 order-lg-first">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                                <h4 class="text-white">Featherweight 149</h4>
+                                <p aling="left" class="mb-0 text-white-50">
+                                  Featherweight 149 is the silencer for those who are looking for lightest hunting suppressor possible.
+                                   Weighing in at only 149 grams It still offers a serious level of suppression in a small and remarkably light package. At this weight it has hardly any effect on the natural balance of the rifle.
+                                   This makes it ideal for driven hunts, stalking and when handling dogs. This suppressor is ideal for smaller calibers.
+                                </p></br>
+
+                                <p class="detail-l"><b>SPECIFICATION</b></p>
+                                <p class="mb-0 text-white-50">
+                                  Suppression: 27-29 dB
+                                  Weight: Approx. 149g
+                                  Core: Titanium
+                                  Length in front of muzzle: 109 mm
+                                  Total Length: 125 mm
+                                  Diameter: 44.5 mm
+                                </p></br>
+                                <p class="detail-l"><b>THREADS</b></p><p class="mb-0 text-white-50">½”28, ½”20, M13x1, 14x1, M15x1, 5/8”24, M17x1, M18x1  </p></br>
+                                <p class="detail-l"><b>CALIBERS</b></p><p class="mb-0 text-white-50">Standard calibers.  .22/6.5mm/.30</p>
+                                <hr class="d-none d-lg-block mb-0 mr-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+          </div>
+            <!-- Project Two Row-->
+        </section>
+        <!-- Signup-->
+        <section class="signup-section" id="signup">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 col-lg-8 mx-auto text-center">
+                        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                        <h2 class="text-white mb-5">Subscribe to receive updates!</h2>
+                        <form class="form-inline d-flex">
+                            <input class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0" id="inputEmail" type="email" placeholder="Enter email address..." />
+                            <button class="btn btn-primary mx-auto" type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact-->
+        <section class="contact-section bg-black">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Address</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50 text-lg-center">Fjellgata 1, Oslo, Norway 0566</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50 text-lg-center"><a href="#!">post@freyr-devik.no</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <hr class="my-4" />
+                                <div class="small text-black-50 text-lg-center">+47-41373731 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="https://www.instagram.com/freyr_devik_silencers/?hl=nb"><i class="fab fa-instagram"></i></a>
+                    <a class="mx-2" href="https://www.facebook.com/freyrdevik/"><i class="fab fa-facebook-f"></i></a>
+
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container">Copyright © Freyr&Devik Website 2020</div></footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

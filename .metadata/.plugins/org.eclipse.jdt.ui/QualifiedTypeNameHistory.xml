@@ -27,8 +27,8 @@
 <fullyQualifiedTypeName name="com.silencer.dao.OrderDAO"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletResponse"/>
-<fullyQualifiedTypeName name="com.silencer.service.OrderServices"/>
 <fullyQualifiedTypeName name="com.silencer.entity.SilencerOrder"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="com.silencer.service.OrderServices"/>
 </qualifiedTypeNameHistroy>

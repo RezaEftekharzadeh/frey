@@ -112,7 +112,7 @@
 		  <p id="test"></p>
 		<c:if test="${cartTotal > 0 }">
 		    <div>
-		    	<form>
+		    	<form action="checkout" method="post">
 		    		<table border="1">
 		    			<tr>
 			    			<th>No</th>
@@ -145,11 +145,11 @@
 		    					<td align="center" >${(item.value * item.key.price)} </td>
 		    					<td align="center" >${afterDiscount * item.value}</td>
 		    					<td><a href="cart_remove?silencer_id=${item.key.silencerId }"><b>Remove</b></a></td>
-			    					
-								
 		    				</tr>
 		    			</c:forEach>
 		    		</table>
+		    		<br/><br/>
+		    		<input type="submit" value ="Continue">
 		    	</form>
 		    </div>
 		</c:if>
